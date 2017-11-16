@@ -1,0 +1,7 @@
+172.26.129.0/24 - Krakow GL office. Bottomline computers network. Defined when LAN connected or GL-KRK-VLAN network
+172.26.130.0/24 - MiniMed Computers
+172.26.131.0/24 - IT/HR/TAG computers
+172.26.132.0/24 - Small projects
+172.26.140.0/24 - Undefined
+172.26.141.0/24 - WiFi - GL-KRK-VLAN
+172.26.142.0/24 - WiFi - GL-Corp WiFI network
