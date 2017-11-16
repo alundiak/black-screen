@@ -5,9 +5,9 @@ GlobalLogic UI/UX Contest task
 
 
 ## Issue
-- Computers are enabled, abd showing how much energy it's used and what we can save
-- Finanical, Energy related, "Earth Hours". 
-- Topic should atract Building owners, and show how much money we can save/economy on shuting computers down? 
+- Computers are enabled, and showing how much energy it's used and what we can save
+- Financial, Energy related, "Earth Hours". 
+- Topic should attract Building owners, and show how much money we can save/economy on shutting computers down? 
 
 
 ## UI Solution
@@ -18,7 +18,7 @@ GlobalLogic UI/UX Contest task
 
 ## UX
 - User should launch the page and understand clearly what he is looking for - map of computers
-- Page should represent valuable informatio for the end customer
+- Page should represent valuable information for the end customer
 
 
 ## Tech Stack
@@ -26,11 +26,11 @@ GlobalLogic UI/UX Contest task
 - Server: NodeSJ, ShellJS, etc
 
 
-## Technical challange/stack
-- Networking related ([`nmap`]()).
-- nmap comands research/log/examples, see `nmap_commands.txt`
+## Technical challenge/stack
+- Networking related ([`nmap`](https://nmap.org/download.html)). Download and install. On macOS `brew install nmap` installs 7.60 version
+- `nmap` commands research/log/examples are in `nmap_commands.txt`
 - After local run, look to `file.log` for runtime results.
-
+- Note: Reserved Unix/Windows CLI commands: `ps`, `scan`, `uname`, `hostname`, `ping`, `tracert`, `traceroute`, so we better avoid custom file names (like scan.sh)
 
 ## Run Locally
 
