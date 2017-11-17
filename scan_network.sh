@@ -9,10 +9,10 @@
 # Ideally, need to find using `awk` or any built in approach, python or perl parser is also external, better to avoid.
 
 # Direct command, single execution
-nmap -sn 172.26.129.0/24
+# nmap -sn 172.26.129.0/24
 
 # Direct command, multiple networks execution
-# nmap -sn 172.26.129.0/24 172.26.130.0/24 172.26.131.0/24 172.26.132.0/24 172.26.140.0/24 172.26.141.0/24 172.26.142.0/24
+nmap -sn 172.26.129.0/24 172.26.130.0/24 172.26.131.0/24 172.26.132.0/24 172.26.140.0/24 172.26.141.0/24 172.26.142.0/24
 # TODO try, and test in GL network
 
 # stdout variant using ${} as string variable, for further parsing.

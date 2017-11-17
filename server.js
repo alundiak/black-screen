@@ -26,10 +26,20 @@ app.get('/scan', function(request, response) {
     // response.status(200).send(result);
 
     // var 2
-    var result = shell.exec('nmap -sn 172.26.129.0/24 >> file.log');
+    var result = shell.exec('nmap -sn 172.26.129.0/24 172.26.130.0/24 172.26.131.0/24 172.26.132.0/24 172.26.140.0/24 172.26.141.0/24 172.26.142.0/24 >> file.log');
     var str = shell.cat('file.log');
     // response.status('200').send(str); // this simply sends to the page as PRE text
 
+    // var 3
+    // TODO use script /scan_network.sh or /scan_network.bat
+    // var result = shell.exec('./scan_network.sh >> file.log');
+    // var str = shell.cat('file.log');
+
+    if (!str) {
+        // use the data/gl_scanned_networks.txt and show on page for dev / test purpose. 
+        // Most probably, at home, u will not have test data.
+    }
+    
     // TODO rework this /scan route to rerutn JSON so that we can use via $.get() and show data on page.
     response.status(200).json({ 
     	// error: 'message'
