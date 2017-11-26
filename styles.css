@@ -1,1 +1,10 @@
 /*TBD*/
+/*TODO: use materialize instead and zero css*/
+html, body, * {
+  padding: 0;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
