@@ -279,3 +279,11 @@ Nmap scan report for krk1-ldl-p10134.synapse.com (172.26.140.148)
 Host is up (0.00s latency).
 Nmap done: 256 IP addresses (14 hosts up) scanned in 10.57 seconds
 
+
+
+$ nmap -sn krk1-ldl-p00670 krk1-ldl-p00669 krk1-ldl-p00667
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2017-11-30 19:34 Central European Standard Time
+Nmap done: 3 IP addresses (0 hosts up) scanned in 6.63 seconds
+
+

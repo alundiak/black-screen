@@ -1,0 +1,303 @@
+$ nmap -sn 172.26.129.0/24 --traceroute
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2017-11-30 18:46 Central European Standard Time
+Nmap scan report for 172.26.129.1
+Host is up (0.0013s latency).
+MAC Address: BC:C4:93:A2:C9:C8 (Cisco Systems)
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   1.25 ms 172.26.129.1
+
+Nmap scan report for 172.26.129.112
+Host is up (0.020s latency).
+MAC Address: 70:5A:0F:88:8E:D1 (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   20.00 ms 172.26.129.112
+
+Nmap scan report for 172.26.129.115
+Host is up (0.050s latency).
+MAC Address: 70:5A:0F:88:AD:1C (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   50.00 ms 172.26.129.115
+
+Nmap scan report for 172.26.129.117
+Host is up (0.050s latency).
+MAC Address: 94:57:A5:BB:18:9B (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   50.00 ms 172.26.129.117
+
+Nmap scan report for 172.26.129.119
+Host is up (0.060s latency).
+MAC Address: DC:4A:3E:03:15:5F (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   60.00 ms 172.26.129.119
+
+Nmap scan report for 172.26.129.123
+Host is up (0.060s latency).
+MAC Address: 94:57:A5:BB:08:26 (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   60.00 ms 172.26.129.123
+
+Nmap scan report for 172.26.129.124
+Host is up (0.040s latency).
+MAC Address: A0:D7:95:6F:C9:EB (Apple)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   40.00 ms 172.26.129.124
+
+Nmap scan report for 172.26.129.125
+Host is up (0.060s latency).
+MAC Address: DC:4A:3E:61:E1:BC (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   60.00 ms 172.26.129.125
+
+Nmap scan report for 172.26.129.126
+Host is up (0.070s latency).
+MAC Address: 7C:5C:F8:9C:31:FF (Intel Corporate)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   70.00 ms 172.26.129.126
+
+Nmap scan report for 172.26.129.127
+Host is up (0.070s latency).
+MAC Address: C4:B3:01:C0:8E:9B (Apple)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   70.00 ms 172.26.129.127
+
+Nmap scan report for 172.26.129.129
+Host is up (0.040s latency).
+MAC Address: 70:5A:0F:89:16:3D (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   40.00 ms 172.26.129.129
+
+Nmap scan report for 172.26.129.133
+Host is up (0.020s latency).
+MAC Address: 70:5A:0F:88:1D:41 (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   20.00 ms 172.26.129.133
+
+Nmap scan report for 172.26.129.137
+Host is up (0.010s latency).
+MAC Address: 94:57:A5:BB:C7:AD (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   10.00 ms 172.26.129.137
+
+Nmap scan report for 172.26.129.141
+Host is up (0.010s latency).
+MAC Address: AC:FD:CE:A0:BA:40 (Intel Corporate)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   10.00 ms 172.26.129.141
+
+Nmap scan report for 172.26.129.144
+Host is up (0.040s latency).
+MAC Address: 70:5A:0F:88:AD:28 (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   40.00 ms 172.26.129.144
+
+Nmap scan report for 172.26.129.145
+Host is up (0.020s latency).
+MAC Address: 70:5A:0F:88:8E:71 (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   20.00 ms 172.26.129.145
+
+Nmap scan report for 172.26.129.151
+Host is up (0.010s latency).
+MAC Address: A4:4C:C8:AC:EF:97 (Dell)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   10.00 ms 172.26.129.151
+
+Nmap scan report for 172.26.129.153
+Host is up (0.040s latency).
+MAC Address: FC:3F:DB:46:81:AC (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   40.00 ms 172.26.129.153
+
+Nmap scan report for 172.26.129.155
+Host is up (0.040s latency).
+MAC Address: 7C:5C:F8:63:07:86 (Intel Corporate)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   40.00 ms 172.26.129.155
+
+Nmap scan report for 172.26.129.158
+Host is up (0.040s latency).
+MAC Address: 28:16:AD:A3:98:41 (Intel Corporate)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   40.00 ms 172.26.129.158
+
+Nmap scan report for 172.26.129.171
+Host is up (0.020s latency).
+MAC Address: FC:3F:DB:43:E8:6B (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   20.00 ms 172.26.129.171
+
+Nmap scan report for 172.26.129.174
+Host is up (0.020s latency).
+MAC Address: 94:57:A5:BB:B7:AA (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   20.00 ms 172.26.129.174
+
+Nmap scan report for 172.26.129.175
+Host is up (0.020s latency).
+MAC Address: FC:3F:DB:43:D7:B6 (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   20.00 ms 172.26.129.175
+
+Nmap scan report for 172.26.129.177
+Host is up (0.040s latency).
+MAC Address: 70:5A:0F:88:1D:47 (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   40.00 ms 172.26.129.177
+
+Nmap scan report for 172.26.129.181
+Host is up (0.030s latency).
+MAC Address: 94:57:A5:BB:C7:0D (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   30.00 ms 172.26.129.181
+
+Nmap scan report for 172.26.129.184
+Host is up (0.040s latency).
+MAC Address: 94:57:A5:BB:D5:21 (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   40.00 ms 172.26.129.184
+
+Nmap scan report for 172.26.129.190
+Host is up (0.030s latency).
+MAC Address: 94:57:A5:BB:C7:F3 (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   30.00 ms 172.26.129.190
+
+Nmap scan report for 172.26.129.195
+Host is up (0.030s latency).
+MAC Address: 94:57:A5:BB:B7:C9 (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   30.00 ms 172.26.129.195
+
+Nmap scan report for 172.26.129.199
+Host is up (0.050s latency).
+MAC Address: 7C:5C:F8:63:05:DD (Intel Corporate)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   50.00 ms 172.26.129.199
+
+Nmap scan report for 172.26.129.202
+Host is up (0.050s latency).
+MAC Address: A4:4C:C8:D0:7E:00 (Dell)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   50.00 ms 172.26.129.202
+
+Nmap scan report for 172.26.129.208
+Host is up (0.080s latency).
+MAC Address: DC:0B:34:8C:CE:42 (LG Electronics (Mobile Communications))
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   80.00 ms 172.26.129.208
+
+Nmap scan report for 172.26.129.210
+Host is up (0.040s latency).
+MAC Address: DC:4A:3E:61:42:89 (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   40.00 ms 172.26.129.210
+
+Nmap scan report for 172.26.129.215
+Host is up (0.020s latency).
+MAC Address: AC:FD:CE:A0:BA:1D (Intel Corporate)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   20.00 ms 172.26.129.215
+
+Nmap scan report for 172.26.129.218
+Host is up (0.021s latency).
+MAC Address: 7C:5C:F8:39:93:AB (Intel Corporate)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   21.00 ms 172.26.129.218
+
+Nmap scan report for 172.26.129.222
+Host is up (0.010s latency).
+MAC Address: 94:57:A5:BB:C7:FD (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   10.00 ms 172.26.129.222
+
+Nmap scan report for 172.26.129.232
+Host is up (0.030s latency).
+MAC Address: 2C:59:8A:10:44:5D (LG Electronics (Mobile Communications))
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   30.00 ms 172.26.129.232
+
+Nmap scan report for 172.26.129.233
+Host is up (0.010s latency).
+MAC Address: 70:5A:0F:88:8E:05 (Hewlett Packard)
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   10.00 ms 172.26.129.233
+
+Nmap scan report for 172.26.129.154
+Host is up.
+
+Nmap done: 256 IP addresses (38 hosts up) scanned in 3.93 seconds
