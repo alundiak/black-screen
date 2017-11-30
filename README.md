@@ -65,10 +65,12 @@ npm start
 
 
 ## Action Items
-- Artur, add simple progress loader (css or image) to show that Scanning network in progress.
 - Artur, research if we can scan computers returning hostnames (nmap or other command)
 - Artur, research if we can scan computers and get Windows User name
 - Artur, excel table and CSV file commited to codebase, use/convert to JSON, and try use during nmap scanning
 - Vlad, get GL map API https://portal.globallogic.com/glm/view/block/Poland/KRK/L7/120/tableid/3070
 - Vlad, resreach GL API to work with Office map maybe
 - Vlad, think about design, ideas, tols, frameworks, mockups, etc.
+
+## Progress
+- Vlads codepen example: https://codepen.io/anon/pen/wPQLQd

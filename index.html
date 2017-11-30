@@ -3,20 +3,43 @@
 
 <head>
     <title>Black Screen</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
 </head>
 
 <body>
-	<div>
-    	<button class="scan-network">Scan Network</button>
+    <header>
+        <h1>Black Screen</h1>
+    </header>
+	
+    <div class="ui buttons">
+    	<button  class="ui positive button scan-network">Find PCs</button>
 	</div>
-	<br/>
+	
+    <br/>
+    
     <!-- TODO: change to some progress bar from materialize use-->
     <div class="loading-indicator hidden">
       loading...
     </div>
-    <textarea class="text-container" cols=200 rows=30></textarea>
+
+    <div>
+        <textarea class="text-container" cols=200 rows=30></textarea>
+    </div>
+    
+
+    <div class="ui buttons">
+        <button class="ui positive button scan-network show-on-map">Show on Map</button>
+    </div>
+
+    <!-- TODO use canvas or SVG or whatever from Glu Map source code -->
+    <!-- https://portal.globallogic.com/glm/view/block/Poland/KRK/ab978c426b0b/L7/120 -->
+    <div>
+        <img src="img/gl-krk-7fl.PNG">
+    </div>
+    
 
     <!--TODO: discuss - use webpack as module loader ??-->
     <script type="text/javascript" src="index.js"></script>
