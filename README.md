@@ -56,6 +56,8 @@ npm start
 - https://expressjs.com/en/guide/routing.html
 - https://github.com/shelljs/shelljs
 - https://glo.globallogic.com/api_documents/ - GL APIs
+- https://www.shellhacks.com/20-nmap-examples/
+- https://hackertarget.com/nmap-cheatsheet-a-quick-reference-guide/
 
 
 ## Authors
@@ -74,3 +76,6 @@ npm start
 
 ## Progress
 - Vlads codepen example: https://codepen.io/anon/pen/wPQLQd
+
+IpAddresses:
+Artur - 172.26.142.129

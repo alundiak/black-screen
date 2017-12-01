@@ -19,7 +19,26 @@ app.get('/', function(request, response) {
 });
 
 app.get('/scan', function(request, response) {
-    
+    const csvFilePath='data/gl_computers.csv'
+    const csv=require('csvtojson')
+
+    const arr = [];
+
+    var obj = csv({
+        // noheader: true,
+        delimiter: ';'
+    })
+    .fromFile(csvFilePath)
+    .on('json',(jsonObj)=>{
+        // console.log(jsonObj['Short Description']);
+        arr.push(jsonObj['Short Description']);
+    })
+    .on('done',(error)=>{
+        response.status(200).json(arr);
+    })
+});
+
+app.get('/scan_old', function(request, response) {
     // var 1
     // Direct variant also works, but it outputs in stdout, and it takes time.
     // var result = shell.exec('nmap -sn 172.26.129.0/24');
