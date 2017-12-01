@@ -1,9 +1,10 @@
 (function(){
-	var $button = $('.scan-network');
+	const $scanNetwork = $('.scan-network');
+	const $showOnMap = $('.show-on-map');
 
 	// TODO use networks.json to scan all available networks
 
-	$button.on('click', function(){
+	$scanNetwork.on('click', function(){
 		$('.loading-indicator').removeClass('hidden');
 		$.get({
 			url: '/scan',
@@ -15,5 +16,9 @@
 				$('.loading-indicator').addClass('hidden');
 			}
 		});
+	});
+
+	$showOnMap.on('click', function() {
+		$('#host-name1').css({backgroundColor: 'red'});
 	});
 }());

@@ -8,3 +8,20 @@ html, body, * {
 .hidden {
   display: none;
 }
+
+.map {
+  position: relative;
+}
+
+.krkmap {
+  width: 1360px;
+  height: 607px;
+}
+
+.krkmap div {
+  position: absolute;
+  width: 15px;
+  height: 39px;
+  top: 22px;
+  left: 94px;
+}
