@@ -16,7 +16,7 @@ function appendHostName(hostnamesArray, hostnameToAppend) {
 }
 
 /**
- * Helper function to write results of network scanning into tex (*.log file) for temporary (runtime, live) usage
+ * Helper function to write results of network scanning into text (*.log file) for temporary (runtime, live) usage
  * @param  {[String]} logsStr
  * @return {[void]}
  */
@@ -25,55 +25,60 @@ function writeToLogFile(logsStr) {
     const fileName = 'al/live_scan.log';
     fs.writeFile(fileName, logsStr, function(err) {
         if (err) return console.log(err);
-        console.log('writing to ' + fileName);
+        // console.log('writing to ' + fileName);
     });
 }
 
 /**
- * Helper function to write JSON data of converted network hostnames into *.JSON file for further usage
+ * Helper function to write JSON data into *.JSON file with proper formating for further usage
  * @param  {[Array]} jsonData
+ * @param {[String]} fileName
  * @return {[void]}
  */
-function writeToJsonFile(jsonData) {
+function writeToJsonFile(jsonData, fileName) {
     const fs = require('fs')
-    const fileName = 'al/gl_computers.json';
 
     // https://stackoverflow.com/questions/10685998/how-to-update-a-value-in-a-json-file-and-save-it-through-node-js
     let content = JSON.stringify(jsonData, null, 2)
 
     fs.writeFile(fileName, content, function(err) {
         if (err) return console.log(err);
-        // console.log(content);
-        console.log('writing to ' + fileName);
+        // console.log('writing to ' + fileName);
     });
 }
 
 //
 // Module to design live network scanning
-// TODO with async/await
 //
-module.exports.convertCsvToArray = function() {
+module.exports.convertCsvToArray = function(convertOptions) {
     const csvFilePath = 'al/gl_computers.csv'
     const csv = require('csvtojson')
 
     return new Promise((resolve, reject) => {
-        let arr = []
-        csv({
-                // noheader: true,
-                delimiter: ';'
-            })
+        let arr = [], resultArr = [];
+
+        let csvOptions = {
+            // noheader: true,
+            delimiter: ';'
+        };
+
+        csv(csvOptions)
             .fromFile(csvFilePath)
             .on('json', (jsonObj) => {
                 arr.push(jsonObj['Short Description']);
             })
             .on('done', (error) => {
-                let filteredArr = arr.filter(function(element) {
-                    return element.indexOf('krk1-lhp') !== -1
-                })
+                if (convertOptions.filterKrkOnly) {
+                    resultArr = arr.filter(function(element) {
+                        return element.indexOf('krk1-lhp') !== -1
+                    })
+                } else {
+                    resultArr = arr;
+                }
 
-                writeToJsonFile(filteredArr)
+                writeToJsonFile(resultArr, 'al/gl_computers.json')
 
-                resolve(filteredArr);
+                resolve(resultArr);
             })
 
     });
@@ -101,7 +106,7 @@ module.exports.liveScan = function(networksData) {
         });
     })
 
-    // var 1.1 - with wrting to file on the fly
+    // var 1.1 - with writing to file on the fly
     // let commandStr = `nmap -sn ${networksStr} >> ${logsFile}`;
     // shell.exec(commandStr)
     // var str = shell.cat(logsFile);
@@ -123,5 +128,58 @@ module.exports.liveScan = function(networksData) {
     //     data: str
     // });
 
-    // TODO decide which way is better by performance: running command uising shelljs or execute scan.sh by NodeJS/shellJs or better way.
+    // TODO decide which way is better by performance: running command using shelljs or execute scan.sh by NodeJS/shellJs or better way.
+}
+
+module.exports.host2ip = function(hostnamesArray) {
+    const shell = require('shelljs')
+
+    // const dns = require('dns') // for using dns.lookup() [https://nodejs.org/api/dns.html]
+    // but there is handy CLI command via npm install -g
+    // const {lookup} = require('dns')
+
+    // lookup('google.com', function() {
+
+    // });
+    // const dns = require('dns');
+
+    // dns.lookup('iana.org', (err, address, family) => {
+    //   console.log('address: %j family: IPv%s', address, family);
+    // });
+
+    // const lookupHostname = require('lookup-hostname')
+
+    hostnamesArray.forEach(function(hostNameStr) {
+        // shell.exec(`dig +short ${hostNameStr}`);
+        // shell.exec(`host ${hostNameStr}`);
+        // shell.exec(`nslookup ${hostNameStr}`);
+
+        // is npm module lookup-hostname installed as --global
+        // shell.exec(`lookup ${hostNameStr}`);
+
+        // shell.exec(`lookup ${hostNameStr}`);
+        // lookupHostname(hostNameStr)
+        // lookup(hostNameStr)
+    })
+}
+
+module.exports.createFakeJson = function() {
+    let desksLength = 90;
+    let desks = [];
+
+    for (var i = 1; i < desksLength; i++) {
+        desks.push({
+            // id_1_parent_g: 'KRK-L7-table--' + i,
+            id_1_parent_g: 'table--' + i,
+            id_2_child_path_table: 'table--' + i,
+            id_3_child_path_reserved: 'reserved--' + i,
+            id_4_child_path_equipment: 'equipment--' + i,
+            id_5_child_g_text: 'text--' + i,
+            ip: '72.26.129.' + i
+        })
+    }
+
+    writeToJsonFile(desks, 'al/fake.json');
+
+    return desks
 }

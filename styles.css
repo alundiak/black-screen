@@ -5,11 +5,7 @@ html, body, * {
   margin: 0;
 }
 
-.hidden {
-  display: none;
-}
-
-.map {
+/*.map {
   position: relative;
 }
 
@@ -24,4 +20,19 @@ html, body, * {
   height: 39px;
   top: 22px;
   left: 94px;
+}*/
+/*
+.left {
+  display: inline-block;   
+}
+
+.right {
+  display: inline-block;
+}
+*/
+.host-up{
+    fill: red !important;
+}
+.host-down{
+    fill: green !important;
 }

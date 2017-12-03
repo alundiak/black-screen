@@ -6,6 +6,8 @@ var bodyParser = require('body-parser')
 var serverHelpers = require('./al/server-helpers')
 var convertCsvToArray = serverHelpers.convertCsvToArray
 var liveScan = serverHelpers.liveScan
+var host2ip = serverHelpers.host2ip
+var createFakeJson = serverHelpers.createFakeJson
 
 app.set('port', (process.env.PORT || 5000)); // process.env.PORT is for Heroku instance
 
@@ -22,16 +24,26 @@ app.get('/', function(request, response) {
 
 app.get('/scan', async function(request, response) {
     // step 1 - convert csv to json
-    // step 1 (alternative) - get mocked list from JSON file (mapping-based-on-artur.json). TODO
+    // step 1 (alternative) - get mocked list from JSON file (fake.json). TODO
 
-    var dataFromConvert = await convertCsvToArray()
+    var dataFromConvert = await convertCsvToArray({
+      filterKrkOnly: true
+    })
+    // console.log(dataFromConvert);
+    // optional step
+    host2ip(dataFromConvert);
 
     // step 2 - scan network with nmap by providing dataFromConvert
-    var dataFromScan = await liveScan(dataFromConvert)
+    // var dataFromScan = await liveScan(dataFromConvert)
 
     response.status(200).json({
         data: dataFromScan
     });
+});
+
+app.get('/fake', function(request, response) {
+  let fakeArr = createFakeJson();
+  response.status(200).json(fakeArr);
 });
 
 app.listen(app.get('port'), function() {

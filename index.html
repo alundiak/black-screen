@@ -14,24 +14,18 @@
         <h1>Black Screen</h1>
     </header>
 
-    <div class="ui buttons">
-    	<button  class="ui positive button scan-network">Find PCs</button>
-	</div>
-
-    <br/>
-
-    <!-- TODO: change to some progress bar from materialize use-->
-    <div class="loading-indicator hidden">
-      loading...
-    </div>
-
     <div>
-        <textarea class="text-container" cols=200 rows=30></textarea>
+      <div class="ui buttons">
+        <button  class="ui positive button scan-network">Find PCs</button>
+        <!-- TODO: change to some progress bar from materialize use-->
+      </div>
+      <span class="loading-indicator" style="display: none;">loading...</span>
+
+      <br/>
+
+      <textarea class="text-container" cols=200 rows=5></textarea>
     </div>
 
-    <div class="ui buttons">
-        <button class="ui positive button show-on-map">Show on Map</button>
-    </div>
 
     <!-- TODO use canvas or SVG or whatever from Glu Map source code -->
     <!-- https://portal.globallogic.com/glm/view/block/Poland/KRK/ab978c426b0b/L7/120 -->
@@ -44,6 +38,11 @@
     </div> -->
 
     <div class="svg-container">
+
+      <div class="ui buttons">
+          <button class="ui positive button show-on-map disabled" title="it's random...">Show on Map</button>
+      </div>
+
   <svg id="krk-map" version="1.1" viewBox="0 0 500 300"
 preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg" class="svg-content">
     <g id="core-inline" class="svg-pan-zoom_viewport"
@@ -1285,7 +1284,7 @@ preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg" class="sv
   <text class="st34" transform="matrix(1 0 0 1 726.0837 582.4493)"><tspan class="st6 st7 st11" x="0" y="0">Guest</tspan><tspan class="st6 st7 st11" x="0" y="10.9">Room</tspan></text>
     </div>
     <!--TODO: discuss - use webpack as module loader ??-->
-    <script type="text/javascript" src="index.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 
 </html>
