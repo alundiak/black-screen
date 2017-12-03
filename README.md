@@ -39,6 +39,11 @@ npm install # first time only
 npm start
 ```
 
+Got to browser
+
+- http://localhost:5000/ - main page
+- http://localhost:5000/al/scan.html - Scanner sandbox
+
 
 ## Presentation
 - Slides
@@ -58,6 +63,7 @@ npm start
 - https://glo.globallogic.com/api_documents/ - GL APIs
 - https://www.shellhacks.com/20-nmap-examples/
 - https://hackertarget.com/nmap-cheatsheet-a-quick-reference-guide/
+- https://unix.stackexchange.com/questions/20784/how-can-i-resolve-a-hostname-to-an-ip-address-in-a-bash-script
 
 
 ## Authors
