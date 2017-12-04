@@ -72,13 +72,11 @@ Got to browser
 - Vlad Kokul
 
 
-## Action Items
-- Artur, research if we can scan computers returning hostnames (nmap or other command)
-- Artur, research if we can scan computers and get Windows User name
-- Artur, excel table and CSV file commited to codebase, use/convert to JSON, and try use during nmap scanning
-- Vlad, get GL map API https://portal.globallogic.com/glm/view/block/Poland/KRK/L7/120/tableid/3070
-- Vlad, resreach GL API to work with Office map maybe
-- Vlad, think about design, ideas, tols, frameworks, mockups, etc.
+## GL Office Map info
+- GL Office map page https://portal.globallogic.com/glm/view/block/Poland/KRK/L7/120/tableid/3070
+- Office Map is working with maps in .svg format, created by designers for every floor specifically. For now, any update in office map plan requires manual redrawing of .svg file.
+- oAuth2 Swagger docs: https://accounts.globallogic.com/api/oauth/v2/ref.yaml
+- Base Swagger docs for OfficeMap: https://portal-sapps.globallogic.com/officemap/api/v1/ref.yaml
 
 ## Progress
 - Vlads codepen example: https://codepen.io/anon/pen/wPQLQd
