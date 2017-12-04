@@ -1,17 +1,29 @@
 (function() {
     const $scanNetwork = $('.scan-network');
-    // TODO use networks.json to scan all available networks
+    const $hostToScan = $('.host-to-scan');
 
     $scanNetwork.on('click', function() {
-        $('.loading-indicator').removeClass('hidden');
+        $('.text-container').text('');
+        $('.loading-indicator').show();
+        
+        var urlStrs = '', urlParams= '';
+
+        if ($hostToScan.val()){
+          urlStr =  '/scan/' + $hostToScan.val();
+          // urlParams = '?customHostname='+ $hostToScan.val();
+          // urlStr = '/scan' + urlParams;
+        } else {
+          urlStr = '/scan';
+        }
+
         $.get({
-            url: '/scan',
+            url: urlStr,
             success: function(xhrData) {
-                // console.log(xhrData);
+                console.log(xhrData);
                 $('.text-container').text(xhrData.data);
             },
             complete: function() {
-                $('.loading-indicator').addClass('hidden');
+                $('.loading-indicator').hide();
             }
         });
     });

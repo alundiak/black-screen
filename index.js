@@ -5,20 +5,6 @@ import * as clientHelpers from './al/client-helpers.js'
     const $showOnMap = $('.show-on-map');
 
     var fakeJsonArray = [];
-    // TODO use networks.json to scan all available networks
-
-    var scanClickHandler = function() {
-        $('.loading-indicator').show();
-        $.get({
-            url: '/scan',
-            success: function(xhrData) {
-                $('.text-container').text(xhrData.data);
-            },
-            complete: function() {
-                $('.loading-indicator').hide();
-            }
-        });
-    };
 
     var fakeScanClickHandler = function() {
         $('.loading-indicator').show();
@@ -42,7 +28,6 @@ import * as clientHelpers from './al/client-helpers.js'
         });
     };
 
-    // $scanNetwork.on('click', scanClickHandler);
     $scanNetwork.on('click', fakeScanClickHandler);
 
     var clickHandler = function() {
@@ -50,15 +35,12 @@ import * as clientHelpers from './al/client-helpers.js'
         // fakeJsonArray = clientHelpers.createFakeJson()
         // variant 2 - Faking on Server side => fakeScanClickHandler()
 
+        let randomNumbers = clientHelpers.createRandomNumbers();
+
         // temp hack
         $('.host-up').removeClass('host-up');
         $('.host-down').removeClass('host-down');
         // temp hack
-
-        let randomNumbers = [];
-        for (var i = 0; i < 20; i++) {
-          randomNumbers[i] = Math.floor(Math.random() * 90); // 90 computers in office, based on Map
-        }
 
         for (var i = 0; i < fakeJsonArray.length; i++) {
             let id1 = fakeJsonArray[i].id_1_parent_g;
