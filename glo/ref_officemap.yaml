@@ -1,0 +1,520 @@
+swagger: '2.0'
+info:
+  title: OfficeMap service
+  description: Mapping of employee places
+  version: "1.0"
+
+# the domain of the service
+host: portal-apps.globallogic.com
+# array of all schemes that your API supports
+schemes:
+  - https
+
+# will be prefixed to all paths
+basePath: /officemap/api/v1
+
+produces:
+  - application/json
+
+
+securityDefinitions:
+  OauthSecurity:
+    type: oauth2
+    flow: accessCode
+    authorizationUrl: 'https://accounts.globallogic.com/oauth/index.html'
+    tokenUrl: 'https://accounts.globallogic.com/api/oauth/v2/token'
+    scopes:
+       GLEM/report:read: get place reports
+       GLEM/officemap:update: update place allocation
+       GLEM/officemap:read: read place info
+       GLEM/relocation:create: can create request
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+
+
+
+
+paths:
+  /export/world.xls:
+    get:
+      summary: |
+        return  XLS report about place all allocations
+      security:
+        - OauthSecurity:
+          - "GLEM/report:read"
+        - Bearer: []
+      description: _
+      tags:
+        - Report
+        - City
+        - Block
+        - Place
+        - Country
+        - Location
+      responses:
+        200:
+          description: XLS file
+          schema:
+            type: string
+
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  
+  /export/county/{county_id}.xls:
+    get:
+      summary: |
+        return  XLS report about place all allocations  for some country
+      security:
+        - OauthSecurity:
+          - "GLEM/report:read"
+        - Bearer: []
+      description: _ 
+      parameters:
+        - name: county_id
+          in: path
+          description: unique id of country
+          required: true
+          type: string
+      tags:
+        - Report
+        - City
+        - Block
+        - Place
+        - Country
+        - Location
+      responses:
+        200:
+          description: XLS file
+          schema:
+            type: string
+
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+            
+
+  /export/country/{city_id}.xls:
+    get:
+      summary: |
+        return  XLS report about place all allocations  for some city
+      security:
+        - OauthSecurity:
+          - "GLEM/report:read"
+        - Bearer: []
+      description: _
+      parameters:
+        - name: city_id
+          in: path
+          description: unique id of city
+          required: true
+          type: string
+      tags:
+        - Report
+        - City
+        - Block
+        - Place
+        - Location
+      responses:
+        200:
+          description: XLS file
+          schema:
+            type: string
+
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+            
+  /export/location/{loc_id}.xls:
+    get:
+      summary: |
+        return  XLS report about place all allocations  for some location
+      security:
+        - OauthSecurity:
+          - "GLEM/report:read"
+        - Bearer: []
+      description: _
+      parameters:
+        - name: loc_id
+          in: path
+          description: unique id of location
+          required: true
+          type: string
+      tags:
+        - Report
+        - Block
+        - Place
+        - Location
+      responses:
+        200:
+          description: XLS file
+          schema:
+            type: string
+
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+            
+  /export/block/{block_id}.xls:
+    get:
+      summary: |
+        return  XLS report about place all allocations  for some block
+      security:
+        - OauthSecurity:
+          - "GLEM/report:read"
+        - Bearer: []
+      description: _
+      parameters:
+        - name: block_id
+          in: path
+          description: id of block
+          required: true
+          type: string
+      tags:
+        - Report
+        - Block
+        - Place
+
+      responses:
+        200:
+          description: XLS file
+          schema:
+            type: string
+
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+
+
+  /place/{place_id}:
+    put:
+      summary: update place of allocation
+      security:
+        - OauthSecurity:
+          - "GLEM/officemap:update"
+        - Bearer: []
+      description: |
+        change place of allocation. Only one field have not be empty
+      parameters:
+        - name: place_id
+          in: path
+          description: id of place
+          required: true
+          type: integer
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              user:
+                type: string
+                description: unique id of employee
+              equipment:
+                type: string
+                description: unique id of partner for reserving of equipment
+              reserved:
+                type: string
+                description: unique id of partner for reserving
+              project_equipment:
+                type: string
+                description: unique id of project for reserving of equipment
+              project_reserved:
+                type: string
+                description: unique id of project for reserving             
+                
+      tags:
+        - Place
+      responses:
+        200:
+          description: return the empty JSON
+          schema:
+            type: object
+
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  
+ 
+  /info/block/{id}:
+    get:
+      summary: get statictics for some block
+      security:
+        - OauthSecurity:
+          - "GLEM/officemap:read"
+        - Bearer: []
+      description: |
+        get statictics for some block
+      parameters:
+        - name: id
+          in: path
+          description: id of block
+          required: true
+          type: integer
+
+                
+      tags:
+        - Place
+      responses:
+        200:
+          description: return amounts of stats
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/StatBlock'
+
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+            
+  /info/location/{name}:
+    get:
+      summary: get statictics for some location
+      security:
+        - OauthSecurity:
+          - "GLEM/officemap:read"
+        - Bearer: []
+      description: |
+        get statictics for some location
+      parameters:
+        - name: name
+          in: path
+          description: name of location
+          required: true
+          type: integer
+
+      tags:
+        - Location
+      responses:
+        200:
+          description: return amounts of stats
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/StatLocation'
+
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  
+  /info/country/{id}:
+    get:
+      summary: get statictics for some country
+      security:
+        - OauthSecurity:
+          - "GLEM/officemap:read"
+        - Bearer: []
+      description: |
+        get statictics for some country
+      parameters:
+        - name: id
+          in: path
+          description: id of country
+          required: true
+          type: integer
+
+      tags:
+        - Country
+      responses:
+        200:
+          description: return amounts of stats
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/StatCountry'
+
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  
+  
+  /info/world:
+    get:
+      summary: get statictics of all country
+      security:
+        - OauthSecurity:
+          - "GLEM/officemap:read"
+        - Bearer: []
+      description: |
+        get statictics of all country
+
+      tags:
+        - World
+      responses:
+        200:
+          description: return amounts of stats
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/StatWorld'
+
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  
+  /requests:
+    post:
+      summary: create a request for relocation
+      security:
+        - OauthSecurity:
+          - "GLEM/relocation:create"
+        - Bearer: []
+      description: _
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              relocations:
+                type: object
+                description: data of relocations
+                additionalProperties:
+                  description: keys are unique employee id
+                  type: object
+                  properties:
+                    from:
+                      description: id of source place
+                      type: integer
+                    to:
+                      description: id of desired place
+                      type: integer
+                
+      tags:
+        - Place
+        - Employee
+      responses:
+        200:
+          description: return the empty JSON
+          schema:
+            type: object
+
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+
+definitions:
+
+  StatBlock:
+    type: object
+    description: datail stats of block.
+    properties:
+      people:
+        type: integer
+        format: int32
+        description: amount of all employees what can be allocated
+      people_with_place:
+        type: integer
+        format: int32
+        description: amount of all employees was allocated
+      total_places:
+        type: integer
+        format: int32
+        description: total amount of all places
+      clients:
+        type: integer
+        format: int32
+        description: amount of all partners
+      projects:
+        type: integer
+        format: int32
+        description: amount of all projects
+      reserved_places:
+        type: integer
+        format: int32
+        description: amount of all reserved places
+      empty_places:
+        type: integer
+        format: int32
+        description: amount of all empty places
+      equipment_places:
+        type: integer
+        format: int32
+        description: amount of all equipment places
+      conference_rooms:
+        type: integer
+        format: int32
+        description: amount of all conference rooms
+      submitted_relocations:
+        type: integer
+        format: int32
+        description: amount of all submitted relocations
+      table_conflicts:
+        type: integer
+        format: int32
+        description: amount of all table conflicts
+      secured_total_places:
+        type: integer
+        format: int32
+        description: amount of all secured total places
+      secured_empty_places:
+        type: integer
+        format: int32
+        description: amount of all secured empty places      
+      secured_busy_places:
+        type: integer
+        format: int32
+        description: amount of all secured busy places
+      generation_time:
+        type: integer
+        format: int32
+        description: UnixTime of this generation
+
+
+  StatLocation:
+    description: datail stats of location.
+    allOf:
+        - $ref: '#/definitions/StatBlock'
+        - properties:
+            people_without_place:
+              type: integer
+              format: int32
+              description: amount of all non-allocated employees
+
+
+  StatCountry:
+    description: datail stats of country.
+    allOf:
+        - $ref: '#/definitions/StatLocation'
+        - properties:
+            total_locations:
+              type: integer
+              format: int32
+              description: amount of all locations
+     
+  StatWorld:
+    description: datail stats of world.
+    allOf:
+        - $ref: '#/definitions/StatCountry'
+        - properties:
+            total_countries:
+              type: integer
+              format: int32
+              description: amount of all countries
+        
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      error:
+        type: string

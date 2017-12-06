@@ -73,10 +73,7 @@ Got to browser
 
 
 ## GL Office Map info
-- GL Office map page https://portal.globallogic.com/glm/view/block/Poland/KRK/L7/120/tableid/3070
-- Office Map is working with maps in .svg format, created by designers for every floor specifically. For now, any update in office map plan requires manual redrawing of .svg file.
-- oAuth2 Swagger docs: https://accounts.globallogic.com/api/oauth/v2/ref.yaml
-- Base Swagger docs for OfficeMap: https://portal-sapps.globallogic.com/officemap/api/v1/ref.yaml
+- See `glo/README.md`
 
 ## Progress
 - Vlads codepen example: https://codepen.io/anon/pen/wPQLQd

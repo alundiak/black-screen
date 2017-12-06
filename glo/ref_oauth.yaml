@@ -1,0 +1,361 @@
+swagger: '2.0'
+info:
+  title: oAuth2 http protocol
+  description:  "Service for a remote authorization of applications. Its documentation: https://tools.ietf.org/html/rfc6749 \n
+  
+    All result scopes will have next format <app_name>/<endpoint>:<action>, where app_name - unique name of application, endpoint - name of endpoint or entity, <action> - can values: create, read, update, delete, admin.\n
+    
+    An aggregate format of a scope: 
+      <app_name>/<endpoint>:<small_action1><small_action2><small_action3>, where  small_action1, small_action2 ... - first letter of scope. For example: 
+      profile/user:cru => [profile/user:create, profile/user:read, profile/user:update]
+    
+  "
+  version: '2.0'
+
+
+# the domain of the service
+host: accounts.globallogic.com
+# array of all schemes that your API supports
+schemes:
+- https
+
+# will be prefixed to all paths
+basePath: /api/oauth/v2
+produces:
+  - 'application/json'
+
+
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+
+paths:
+  /authorize:
+    get:
+      summary: redirect for user authorization 
+      parameters:
+        - name: client_id
+          in: query
+          description: unique ID of application
+          required: true
+          type: string
+        - name: response_type
+          in: query
+          required: false
+          default: code
+          type: string
+          description:  "type of response. Values:\n
+            code - response with a code for getting of token
+            token - response with an access token. It is enable for trusted application only.
+          "
+        - name: state
+          in: query
+          required: false
+          type: string
+          description:  random string for validation of a server response
+          
+        - name: redirect_uri
+          in: query
+          required: true
+          type: string
+          description:  callback url of application.
+        - name: scope
+          in: query
+          required: false
+          type: string
+          description:  list of request scopes. For example &scope='profile/user:cr profile:group:a'. 
+          
+      responses:
+        304:
+          description: "callback url with data"
+          schema:
+            type: object
+            description: "
+            format of callback url: \n
+              <redirect_uri>?error=<error>&error_description=<error_description>&code=<code>&token=<access_token>&ttl=<ttl>&state=<state>\n
+            
+            redirect_uri - callback of an application;\n
+            error - type of error. https://tools.ietf.org/html/rfc6749#section-5.2;
+            error_description - description of error;
+            code - code of authorization if response_type was set to 'code';
+            token - access token if response_type was set to 'token';
+            state - copy of fiend 'state' from a request. Need for valid server response
+            ttl -TTL of currect token if response_type was set to 'token';
+          "
+      tags:
+      - Token
+  /logout:
+    get:
+      summary: redirect for required authorization
+      parameters:
+        - name: client_id
+          in: query
+          description: unique ID of application
+          required: true
+          type: string
+        - name: response_type
+          in: query
+          required: false
+          default: code
+          type: string
+          description:  "type of response. Values:\n
+            code - response with a code for getting of token
+            token - response with an access token. It is enable for trusted application only.
+          "
+        - name: state
+          in: query
+          required: false
+          type: string
+          description:  random string for validation of a server response
+          
+        - name: redirect_uri
+          in: query
+          required: true
+          type: string
+          description:  callback url of application.
+        - name: scope
+          in: query
+          required: false
+          type: string
+          description:  list of request scopes. For example &scope='profile/user:cr profile:group:a'. 
+          
+      responses:
+        304:
+          description: "callback url with data"
+          schema:
+            type: object
+            description: "
+            format of callback url: \n
+              <redirect_uri>?error=<error>&error_description=<error_description>&code=<code>&token=<access_token>&ttl=<ttl>&state=<state>\n
+            
+            redirect_uri - callback of an application;\n
+            error - type of error. https://tools.ietf.org/html/rfc6749#section-5.2;
+            error_description - description of error;
+            code - code of authorization if response_type was set to 'code';
+            token - access token if response_type was set to 'token';
+            state - copy of fiend 'state' from a request. Need for valid server response
+            ttl -TTL of currect token if response_type was set to 'token';
+          "
+      tags:
+      - Token
+
+
+  /token:
+    post:
+      summary: get or refresh a token by a code or login/password of user, 
+
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          type: object
+          properties:
+            redirect_uri:
+              type: string
+              description:  application's url for sending of a response
+            grant_type:
+              type: string
+              description: "Values:
+                1) password - getting a token without the first step. Fields 'login' and 'password' are required if it is set. Its type is enable for trusted application only.
+                2) authorization_code - getting a token by a some code what was given by the first step. The field 'code' is required.
+                3) refresh_token - getting a new token by a refresh token. A field 'refresh_token' is required.
+                "
+            login:
+              type: string
+              description: login of an user. It is needed for the grant_type 'password'
+            password:
+              type: string
+              description: password of an user. It is needed for the grant_type 'password'
+            code:
+              type: string
+              description: temporary code for getting of a token
+            refresh_token:
+              type: string
+              description: refresh token for updating an old token
+            client_secret:
+              type: string
+              description: password of an application for authorization
+            client_id:
+              type: string
+              description: unique id of an application for authorization  
+              
+
+        
+      
+      responses:
+        200:
+          description: An object with employees' information
+          schema:
+            type: object
+            properties:
+              access_token:
+                type: string
+                description: unique JWT token
+              token_type:
+                type: string
+                description: "type of employment for this token. There is the type 'bearer' only.
+                https://developers.google.com/gmail/markup/actions/verifying-bearer-tokens"
+              refresh_token:
+                type: string
+                description: token for refresh old token
+              expired_time:
+                type: integer
+                format: int32
+                description: expired time of refresh token, UnixTime
+              expires_in:
+                type: integer
+                format: int32
+                description: TTL of refresh token
+              scopes:
+                type: array
+                description: list of enable scopes
+                items:
+                  type: string
+                  description: "aggregate format of scope."
+              scope_entities:
+                $ref: '#/definitions/EntityScopes'
+
+                  
+                  
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+              
+      tags:
+      - Token
+ 
+  /public_key:
+    get:
+      summary: public key for valication of a JWT token
+      produces:
+      - 'text/plain'
+      responses:
+        200:
+          description: raw text of a public key
+          schema:
+            type: string
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+      - Token
+      
+  /scope:
+    get:
+      summary: get list of all enable scopes for a currect JWT scope
+      security:
+      - Bearer: []
+      responses:
+        200:
+          description: list of scopes
+          schema:
+            type: object
+            properties:
+              scopes:
+                type: array
+                description: list of enable scopes
+                items:
+                  type: string
+                  description: "aggregate format of scope"
+              scope_entities:
+                $ref: '#/definitions/EntityScopes'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+            
+      tags:
+      - Scope
+      
+  /revoke:
+    post:
+      summary: remove all JWT token for currect user
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          type: object
+          properties:
+            token:
+              type: string
+              description: access token or refresh token
+            token_type_hint:
+              type: string
+              description: "type of token: access_token or refresh_token"
+        
+      
+      responses:
+        200:
+          description: An object with employees' information
+          schema:
+            type: object
+            description: empty json
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+      - Token
+      
+    delete:
+      summary: remove all JWT token for currect user
+      security:
+      - Bearer: []
+
+      tags:
+        - Token
+
+      responses:
+        200:
+          description: An object with employees' information
+          schema:
+            type: object
+            description: empty json
+
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+
+
+
+# -------------------------------------------------------------------------
+#  DEFINITIONS
+# -------------------------------------------------------------------------
+
+definitions:
+
+  EntityScopes:
+    type: object
+    additionalProperties: 
+      description: "aggregated scope with enable entities"
+      type: object
+      additionalProperties:
+        description: |
+          name of entity. There are enable the next entities:
+          * employee
+          * partner
+          * project
+        type: array
+        items:
+            description: list with IDs of enable entities
+            type: string
+
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      error:
+        type: string
+        description: message of error
+
+
+        
