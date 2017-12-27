@@ -28,6 +28,36 @@
 # Built In commands (mac OS)
 #
 
+#
+# AL - FROM MacOS scanning My work PC
+# 
+
+# krk1-lhp-p00912
+# 169.254.16.88 - after ncap/nmap interface
+# 172.26.129.227 (if via LAN)
+# 172.26.129.200 (if via KRK-VLAN)
+# 172.26.142.175 (if via KRK-VLAN)
+
+
+# host 172.26.129.200
+# Host 200.129.26.172.in-addr.arpa. not found: 3(NXDOMAIN)
+# host 172.26.142.175
+# Host 175.142.26.172.in-addr.arpa. not found: 3(NXDOMAIN)
+
+# nslookup 172.26.142.175
+# Server:		8.8.8.8
+# Address:	8.8.8.8#53
+# ** server can't find 175.142.26.172.in-addr.arpa: NXDOMAIN
+
+# nslookup 172.26.129.200
+# Server:		8.8.8.8
+# Address:	8.8.8.8#53
+# ** server can't find 200.129.26.172.in-addr.arpa: NXDOMAIN
+
+#
+#
+#
+
 #ipconfig getifaddr en4 # assuming that en4 current enabled interface
 # 169.254.13.252 - AL local IP address (from home / UPC Internet provider)
 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="/node_modules/d3/build/d3.js" charset="utf-8"></script>
+    <script src="/node_modules/qs/dist/qs.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="./treemap.css">
+    <title>IP Hierarchy (Treemap)</title>
+</head>
+
+<body>
+    <form>
+        <label>
+            <input type="radio" name="mode" value="sumBySize" checked> Size</label>
+        <label>
+            <input type="radio" name="mode" value="sumByCount"> Count</label>
+    </form>
+    <svg width="960" height="960"></svg>
+    <script type="module" src="./treemap.js"></script>
+</body>
+
+</html>

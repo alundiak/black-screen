@@ -23,7 +23,7 @@ GlobalLogic UI/UX Contest task
 
 ## Tech Stack
 - UI: Bootstrap, Semantic UI, Materialize UI
-- Server: NodeSJ, ShellJS, etc
+- Server: NodeSJ > 8.x, ShellJS, etc
 
 
 ## Technical challenge/stack
@@ -64,7 +64,7 @@ Got to browser
 - https://www.shellhacks.com/20-nmap-examples/
 - https://hackertarget.com/nmap-cheatsheet-a-quick-reference-guide/
 - https://unix.stackexchange.com/questions/20784/how-can-i-resolve-a-hostname-to-an-ip-address-in-a-bash-script
-
+- https://ubuntuforums.org/showthread.php?t=1656571
 
 ## Authors
 - Andrii Lundiak

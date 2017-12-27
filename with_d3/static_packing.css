@@ -1,0 +1,27 @@
+/*
+From https://bl.ocks.org/mbostock/4063530 + my-tunes changes
+*/
+circle {
+  fill: rgb(31, 119, 180);
+  fill-opacity: .25;
+  stroke: rgb(31, 119, 180);
+  stroke-width: 1px;
+}
+
+.leaf circle {
+  fill: #ff7f0e;
+  fill-opacity: 1;
+}
+
+text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+/**
+ * Custom CSS
+ */
+
+body {
+    padding: 0 15%;
+}
