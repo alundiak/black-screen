@@ -1,15 +1,15 @@
 /**
  * Depends on network, or VPN we may need to append hostname suffix, to short names so that some CLI commands work properly
- * @param  {[Array]} hostnamesArray - 
+ * @param  {[Array]} hostnamesArray -
  * @param  {[String]} hostnameToAppend - optional
  * @return {[Array]} - modified hostnamesArray
  */
 function appendHostName(hostnamesArray, hostnameToAppend) {
     //
-    // Internally, hostnames are available as "krk1-lhp-f61897" 
+    // Internally, hostnames are available as "krk1-lhp-f61897"
     // "synapse.com" is internal server/hostname in GL network.
     // but for at least command "dig" there is need in full hostname (krk1-lhp-f61897.synapse.com)
-    // 
+    //
     return hostnamesArray.map(function(el) {
         return el + '.synapse.com';
     })
@@ -98,7 +98,7 @@ module.exports.liveScan = function(networksData) {
 
     return new Promise((resolve, reject) => {
         shell.exec(commandStr, function(code, stdout, stderr) {
-            writeToLogFile(stdout) // optional step, for debugging  
+            writeToLogFile(stdout) // optional step, for debugging
 
             console.log('Looks like all done')
 
@@ -118,7 +118,7 @@ module.exports.liveScan = function(networksData) {
     // var str = shell.cat('file.log');
 
     // if (!str) {
-    //     // use the al/gl_scanned_networks.txt and show on page for dev / test purpose. 
+    //     // use the al/gl_scanned_networks.txt and show on page for dev / test purpose.
     //     // Most probably, at home, u will not have test data.
     // }
 
@@ -172,7 +172,7 @@ module.exports.createFakeJson = function() {
 
     for (var i = 1; i <= nDesks; i++) {
         desks.push({
-            id_1_parent_g_real: 'KRK-L7--table--' + i,
+            id_1_parent_g_real: 'krk-table--' + i,
             id_1_parent_g: 'table--' + i,
             id_2_child_path_table: 'table--' + i,
             id_3_child_path_reserved: 'reserved--' + i,
@@ -185,7 +185,7 @@ module.exports.createFakeJson = function() {
     // m - meaning MiniMed ? MedTronic?
     for (var i = 1; i <= nDesksM; i++) {
         desks.push({
-            id_1_parent_g_real: 'KRK-L7--table--' + i + 'm',
+            id_1_parent_g_real: 'krk-table--' + i + 'm',
             id_1_parent_g: 'table--' + i + 'm',
             id_2_child_path_table: 'table--' + i + 'm',
             id_3_child_path_reserved: 'reserved--' + i + 'm',
@@ -198,7 +198,7 @@ module.exports.createFakeJson = function() {
     // s - meaning Small Projects?
     for (var i = 1; i <= nDesksS; i++) {
         desks.push({
-            id_1_parent_g_real: 'KRK-L7--table--' + i + 's',
+            id_1_parent_g_real: 'krk-table--' + i + 's',
             id_1_parent_g: 'table--' + i + 's',
             id_2_child_path_table: 'table--' + i + 's',
             id_3_child_path_reserved: 'reserved--' + i + 's',

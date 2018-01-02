@@ -1,60 +1,59 @@
-import * as clientHelpers from './al/client-helpers.js'
-
 (function() {
     const $scanNetwork = $('.scan-network');
     const $showOnMap = $('.show-on-map');
+    const $shutDownAll = $('.shut-down-all');
+    let fakeJsonArray;
 
-    var fakeJsonArray = [];
-
-    var fakeScanClickHandler = function() {
+    const fakeScanClickHandler = () => {
         $('.loading-indicator').show();
         $.get({
             url: '/fake',
-            success: function(xhrData) {
+            success: xhrData => {
                 fakeJsonArray = xhrData;
 
-                let ipsArr = xhrData.map(function(element) {
-                    return element.ip
-                });
-
+                let ipsArr = xhrData.map(element => element.ip);
                 let ipsStr = ipsArr.join(', ');
+
                 $('.text-container').text(ipsStr);
 
-                $showOnMap.removeClass('disabled');
+                if (fakeJsonArray && fakeJsonArray.length) {
+                  $showOnMap.removeClass('disabled');
+                  $shutDownAll.removeClass('disabled');
+                }
             },
-            complete: function() {
+            complete: () => {
                 $('.loading-indicator').hide();
             }
         });
-    };
+    }
 
     $scanNetwork.on('click', fakeScanClickHandler);
 
-    var clickHandler = function() {
-        // Variant 1 - Faking on Client side
-        // fakeJsonArray = clientHelpers.createFakeJson()
-        // variant 2 - Faking on Server side => fakeScanClickHandler()
-
-        let randomNumbers = clientHelpers.createRandomNumbers();
-
-        // temp hack
+    const showOnMapClickHandler = () => {
         $('.host-up').removeClass('host-up');
-        $('.host-down').removeClass('host-down');
-        // temp hack
 
-        for (var i = 0; i < fakeJsonArray.length; i++) {
-            let id1 = fakeJsonArray[i].id_1_parent_g;
-            let id2 = fakeJsonArray[i].id_2_child_path_table;
-
-            let cssSelector = `#${id1} #${id2}`;
-
-            if (randomNumbers.indexOf(i) > -1){
-              $(cssSelector).addClass('host-up');  
-            } else {
-              $(cssSelector).addClass('host-down');  
-            }
+        for (let i = 0; i < fakeJsonArray.length; i++) {
+            let id1 = fakeJsonArray[i].id_1_parent_g_real;
+            let cssSelector = `#${id1} path`;
+            $(cssSelector).addClass('host-up');
         }
-    };
+    }
 
-    $showOnMap.on('click', clickHandler);
+    $showOnMap.on('click', showOnMapClickHandler);
+
+    const shutDownAllClickHandler = () => {
+        $('.loading-indicator.shut-down').show();
+        $scanNetwork.addClass('disabled');
+        $showOnMap.addClass('disabled');
+
+        setTimeout(() => {
+          $('.text-container').text('');
+          $('.host-up').removeClass('host-up');
+          $('.loading-indicator.shut-down').hide();
+          $scanNetwork.removeClass('disabled');
+          $shutDownAll.addClass('disabled');
+        }, 2000);
+    }
+
+    $shutDownAll.on('click', shutDownAllClickHandler);
 }());

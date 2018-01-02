@@ -1,6 +1,6 @@
 [
   {
-    "id_1_parent_g_real": "KRK-L7--table--1",
+    "id_1_parent_g_real": "krk-table--1",
     "id_1_parent_g": "table--1",
     "id_2_child_path_table": "table--1",
     "id_3_child_path_reserved": "reserved--1",
@@ -9,7 +9,7 @@
     "ip": "172.26.129.1"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--2",
+    "id_1_parent_g_real": "krk-table--2",
     "id_1_parent_g": "table--2",
     "id_2_child_path_table": "table--2",
     "id_3_child_path_reserved": "reserved--2",
@@ -18,7 +18,7 @@
     "ip": "172.26.129.2"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--3",
+    "id_1_parent_g_real": "krk-table--3",
     "id_1_parent_g": "table--3",
     "id_2_child_path_table": "table--3",
     "id_3_child_path_reserved": "reserved--3",
@@ -27,7 +27,7 @@
     "ip": "172.26.129.3"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--4",
+    "id_1_parent_g_real": "krk-table--4",
     "id_1_parent_g": "table--4",
     "id_2_child_path_table": "table--4",
     "id_3_child_path_reserved": "reserved--4",
@@ -36,7 +36,7 @@
     "ip": "172.26.129.4"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--5",
+    "id_1_parent_g_real": "krk-table--5",
     "id_1_parent_g": "table--5",
     "id_2_child_path_table": "table--5",
     "id_3_child_path_reserved": "reserved--5",
@@ -45,7 +45,7 @@
     "ip": "172.26.129.5"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--6",
+    "id_1_parent_g_real": "krk-table--6",
     "id_1_parent_g": "table--6",
     "id_2_child_path_table": "table--6",
     "id_3_child_path_reserved": "reserved--6",
@@ -54,7 +54,7 @@
     "ip": "172.26.129.6"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--7",
+    "id_1_parent_g_real": "krk-table--7",
     "id_1_parent_g": "table--7",
     "id_2_child_path_table": "table--7",
     "id_3_child_path_reserved": "reserved--7",
@@ -63,7 +63,7 @@
     "ip": "172.26.129.7"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--8",
+    "id_1_parent_g_real": "krk-table--8",
     "id_1_parent_g": "table--8",
     "id_2_child_path_table": "table--8",
     "id_3_child_path_reserved": "reserved--8",
@@ -72,7 +72,7 @@
     "ip": "172.26.129.8"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--9",
+    "id_1_parent_g_real": "krk-table--9",
     "id_1_parent_g": "table--9",
     "id_2_child_path_table": "table--9",
     "id_3_child_path_reserved": "reserved--9",
@@ -81,7 +81,7 @@
     "ip": "172.26.129.9"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--10",
+    "id_1_parent_g_real": "krk-table--10",
     "id_1_parent_g": "table--10",
     "id_2_child_path_table": "table--10",
     "id_3_child_path_reserved": "reserved--10",
@@ -90,7 +90,7 @@
     "ip": "172.26.129.10"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--11",
+    "id_1_parent_g_real": "krk-table--11",
     "id_1_parent_g": "table--11",
     "id_2_child_path_table": "table--11",
     "id_3_child_path_reserved": "reserved--11",
@@ -99,7 +99,7 @@
     "ip": "172.26.129.11"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--12",
+    "id_1_parent_g_real": "krk-table--12",
     "id_1_parent_g": "table--12",
     "id_2_child_path_table": "table--12",
     "id_3_child_path_reserved": "reserved--12",
@@ -108,7 +108,7 @@
     "ip": "172.26.129.12"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--13",
+    "id_1_parent_g_real": "krk-table--13",
     "id_1_parent_g": "table--13",
     "id_2_child_path_table": "table--13",
     "id_3_child_path_reserved": "reserved--13",
@@ -117,7 +117,7 @@
     "ip": "172.26.129.13"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--14",
+    "id_1_parent_g_real": "krk-table--14",
     "id_1_parent_g": "table--14",
     "id_2_child_path_table": "table--14",
     "id_3_child_path_reserved": "reserved--14",
@@ -126,7 +126,7 @@
     "ip": "172.26.129.14"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--15",
+    "id_1_parent_g_real": "krk-table--15",
     "id_1_parent_g": "table--15",
     "id_2_child_path_table": "table--15",
     "id_3_child_path_reserved": "reserved--15",
@@ -135,7 +135,7 @@
     "ip": "172.26.129.15"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--16",
+    "id_1_parent_g_real": "krk-table--16",
     "id_1_parent_g": "table--16",
     "id_2_child_path_table": "table--16",
     "id_3_child_path_reserved": "reserved--16",
@@ -144,7 +144,7 @@
     "ip": "172.26.129.16"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--17",
+    "id_1_parent_g_real": "krk-table--17",
     "id_1_parent_g": "table--17",
     "id_2_child_path_table": "table--17",
     "id_3_child_path_reserved": "reserved--17",
@@ -153,7 +153,7 @@
     "ip": "172.26.129.17"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--18",
+    "id_1_parent_g_real": "krk-table--18",
     "id_1_parent_g": "table--18",
     "id_2_child_path_table": "table--18",
     "id_3_child_path_reserved": "reserved--18",
@@ -162,7 +162,7 @@
     "ip": "172.26.129.18"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--19",
+    "id_1_parent_g_real": "krk-table--19",
     "id_1_parent_g": "table--19",
     "id_2_child_path_table": "table--19",
     "id_3_child_path_reserved": "reserved--19",
@@ -171,7 +171,7 @@
     "ip": "172.26.129.19"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--20",
+    "id_1_parent_g_real": "krk-table--20",
     "id_1_parent_g": "table--20",
     "id_2_child_path_table": "table--20",
     "id_3_child_path_reserved": "reserved--20",
@@ -180,7 +180,7 @@
     "ip": "172.26.129.20"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--21",
+    "id_1_parent_g_real": "krk-table--21",
     "id_1_parent_g": "table--21",
     "id_2_child_path_table": "table--21",
     "id_3_child_path_reserved": "reserved--21",
@@ -189,7 +189,7 @@
     "ip": "172.26.129.21"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--22",
+    "id_1_parent_g_real": "krk-table--22",
     "id_1_parent_g": "table--22",
     "id_2_child_path_table": "table--22",
     "id_3_child_path_reserved": "reserved--22",
@@ -198,7 +198,7 @@
     "ip": "172.26.129.22"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--23",
+    "id_1_parent_g_real": "krk-table--23",
     "id_1_parent_g": "table--23",
     "id_2_child_path_table": "table--23",
     "id_3_child_path_reserved": "reserved--23",
@@ -207,7 +207,7 @@
     "ip": "172.26.129.23"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--24",
+    "id_1_parent_g_real": "krk-table--24",
     "id_1_parent_g": "table--24",
     "id_2_child_path_table": "table--24",
     "id_3_child_path_reserved": "reserved--24",
@@ -216,7 +216,7 @@
     "ip": "172.26.129.24"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--25",
+    "id_1_parent_g_real": "krk-table--25",
     "id_1_parent_g": "table--25",
     "id_2_child_path_table": "table--25",
     "id_3_child_path_reserved": "reserved--25",
@@ -225,7 +225,7 @@
     "ip": "172.26.129.25"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--26",
+    "id_1_parent_g_real": "krk-table--26",
     "id_1_parent_g": "table--26",
     "id_2_child_path_table": "table--26",
     "id_3_child_path_reserved": "reserved--26",
@@ -234,7 +234,7 @@
     "ip": "172.26.129.26"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--27",
+    "id_1_parent_g_real": "krk-table--27",
     "id_1_parent_g": "table--27",
     "id_2_child_path_table": "table--27",
     "id_3_child_path_reserved": "reserved--27",
@@ -243,7 +243,7 @@
     "ip": "172.26.129.27"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--28",
+    "id_1_parent_g_real": "krk-table--28",
     "id_1_parent_g": "table--28",
     "id_2_child_path_table": "table--28",
     "id_3_child_path_reserved": "reserved--28",
@@ -252,7 +252,7 @@
     "ip": "172.26.129.28"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--29",
+    "id_1_parent_g_real": "krk-table--29",
     "id_1_parent_g": "table--29",
     "id_2_child_path_table": "table--29",
     "id_3_child_path_reserved": "reserved--29",
@@ -261,7 +261,7 @@
     "ip": "172.26.129.29"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--30",
+    "id_1_parent_g_real": "krk-table--30",
     "id_1_parent_g": "table--30",
     "id_2_child_path_table": "table--30",
     "id_3_child_path_reserved": "reserved--30",
@@ -270,7 +270,7 @@
     "ip": "172.26.129.30"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--31",
+    "id_1_parent_g_real": "krk-table--31",
     "id_1_parent_g": "table--31",
     "id_2_child_path_table": "table--31",
     "id_3_child_path_reserved": "reserved--31",
@@ -279,7 +279,7 @@
     "ip": "172.26.129.31"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--32",
+    "id_1_parent_g_real": "krk-table--32",
     "id_1_parent_g": "table--32",
     "id_2_child_path_table": "table--32",
     "id_3_child_path_reserved": "reserved--32",
@@ -288,7 +288,7 @@
     "ip": "172.26.129.32"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--33",
+    "id_1_parent_g_real": "krk-table--33",
     "id_1_parent_g": "table--33",
     "id_2_child_path_table": "table--33",
     "id_3_child_path_reserved": "reserved--33",
@@ -297,7 +297,7 @@
     "ip": "172.26.129.33"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--34",
+    "id_1_parent_g_real": "krk-table--34",
     "id_1_parent_g": "table--34",
     "id_2_child_path_table": "table--34",
     "id_3_child_path_reserved": "reserved--34",
@@ -306,7 +306,7 @@
     "ip": "172.26.129.34"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--35",
+    "id_1_parent_g_real": "krk-table--35",
     "id_1_parent_g": "table--35",
     "id_2_child_path_table": "table--35",
     "id_3_child_path_reserved": "reserved--35",
@@ -315,7 +315,7 @@
     "ip": "172.26.129.35"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--36",
+    "id_1_parent_g_real": "krk-table--36",
     "id_1_parent_g": "table--36",
     "id_2_child_path_table": "table--36",
     "id_3_child_path_reserved": "reserved--36",
@@ -324,7 +324,7 @@
     "ip": "172.26.129.36"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--37",
+    "id_1_parent_g_real": "krk-table--37",
     "id_1_parent_g": "table--37",
     "id_2_child_path_table": "table--37",
     "id_3_child_path_reserved": "reserved--37",
@@ -333,7 +333,7 @@
     "ip": "172.26.129.37"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--38",
+    "id_1_parent_g_real": "krk-table--38",
     "id_1_parent_g": "table--38",
     "id_2_child_path_table": "table--38",
     "id_3_child_path_reserved": "reserved--38",
@@ -342,7 +342,7 @@
     "ip": "172.26.129.38"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--39",
+    "id_1_parent_g_real": "krk-table--39",
     "id_1_parent_g": "table--39",
     "id_2_child_path_table": "table--39",
     "id_3_child_path_reserved": "reserved--39",
@@ -351,7 +351,7 @@
     "ip": "172.26.129.39"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--40",
+    "id_1_parent_g_real": "krk-table--40",
     "id_1_parent_g": "table--40",
     "id_2_child_path_table": "table--40",
     "id_3_child_path_reserved": "reserved--40",
@@ -360,7 +360,7 @@
     "ip": "172.26.129.40"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--41",
+    "id_1_parent_g_real": "krk-table--41",
     "id_1_parent_g": "table--41",
     "id_2_child_path_table": "table--41",
     "id_3_child_path_reserved": "reserved--41",
@@ -369,7 +369,7 @@
     "ip": "172.26.129.41"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--42",
+    "id_1_parent_g_real": "krk-table--42",
     "id_1_parent_g": "table--42",
     "id_2_child_path_table": "table--42",
     "id_3_child_path_reserved": "reserved--42",
@@ -378,7 +378,7 @@
     "ip": "172.26.129.42"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--43",
+    "id_1_parent_g_real": "krk-table--43",
     "id_1_parent_g": "table--43",
     "id_2_child_path_table": "table--43",
     "id_3_child_path_reserved": "reserved--43",
@@ -387,7 +387,7 @@
     "ip": "172.26.129.43"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--44",
+    "id_1_parent_g_real": "krk-table--44",
     "id_1_parent_g": "table--44",
     "id_2_child_path_table": "table--44",
     "id_3_child_path_reserved": "reserved--44",
@@ -396,7 +396,7 @@
     "ip": "172.26.129.44"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--45",
+    "id_1_parent_g_real": "krk-table--45",
     "id_1_parent_g": "table--45",
     "id_2_child_path_table": "table--45",
     "id_3_child_path_reserved": "reserved--45",
@@ -405,7 +405,7 @@
     "ip": "172.26.129.45"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--46",
+    "id_1_parent_g_real": "krk-table--46",
     "id_1_parent_g": "table--46",
     "id_2_child_path_table": "table--46",
     "id_3_child_path_reserved": "reserved--46",
@@ -414,7 +414,7 @@
     "ip": "172.26.129.46"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--47",
+    "id_1_parent_g_real": "krk-table--47",
     "id_1_parent_g": "table--47",
     "id_2_child_path_table": "table--47",
     "id_3_child_path_reserved": "reserved--47",
@@ -423,7 +423,7 @@
     "ip": "172.26.129.47"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--48",
+    "id_1_parent_g_real": "krk-table--48",
     "id_1_parent_g": "table--48",
     "id_2_child_path_table": "table--48",
     "id_3_child_path_reserved": "reserved--48",
@@ -432,7 +432,7 @@
     "ip": "172.26.129.48"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--49",
+    "id_1_parent_g_real": "krk-table--49",
     "id_1_parent_g": "table--49",
     "id_2_child_path_table": "table--49",
     "id_3_child_path_reserved": "reserved--49",
@@ -441,7 +441,7 @@
     "ip": "172.26.129.49"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--50",
+    "id_1_parent_g_real": "krk-table--50",
     "id_1_parent_g": "table--50",
     "id_2_child_path_table": "table--50",
     "id_3_child_path_reserved": "reserved--50",
@@ -450,7 +450,7 @@
     "ip": "172.26.129.50"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--51",
+    "id_1_parent_g_real": "krk-table--51",
     "id_1_parent_g": "table--51",
     "id_2_child_path_table": "table--51",
     "id_3_child_path_reserved": "reserved--51",
@@ -459,7 +459,7 @@
     "ip": "172.26.129.51"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--52",
+    "id_1_parent_g_real": "krk-table--52",
     "id_1_parent_g": "table--52",
     "id_2_child_path_table": "table--52",
     "id_3_child_path_reserved": "reserved--52",
@@ -468,7 +468,7 @@
     "ip": "172.26.129.52"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--53",
+    "id_1_parent_g_real": "krk-table--53",
     "id_1_parent_g": "table--53",
     "id_2_child_path_table": "table--53",
     "id_3_child_path_reserved": "reserved--53",
@@ -477,7 +477,7 @@
     "ip": "172.26.129.53"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--54",
+    "id_1_parent_g_real": "krk-table--54",
     "id_1_parent_g": "table--54",
     "id_2_child_path_table": "table--54",
     "id_3_child_path_reserved": "reserved--54",
@@ -486,7 +486,7 @@
     "ip": "172.26.129.54"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--55",
+    "id_1_parent_g_real": "krk-table--55",
     "id_1_parent_g": "table--55",
     "id_2_child_path_table": "table--55",
     "id_3_child_path_reserved": "reserved--55",
@@ -495,7 +495,7 @@
     "ip": "172.26.129.55"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--56",
+    "id_1_parent_g_real": "krk-table--56",
     "id_1_parent_g": "table--56",
     "id_2_child_path_table": "table--56",
     "id_3_child_path_reserved": "reserved--56",
@@ -504,7 +504,7 @@
     "ip": "172.26.129.56"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--57",
+    "id_1_parent_g_real": "krk-table--57",
     "id_1_parent_g": "table--57",
     "id_2_child_path_table": "table--57",
     "id_3_child_path_reserved": "reserved--57",
@@ -513,7 +513,7 @@
     "ip": "172.26.129.57"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--58",
+    "id_1_parent_g_real": "krk-table--58",
     "id_1_parent_g": "table--58",
     "id_2_child_path_table": "table--58",
     "id_3_child_path_reserved": "reserved--58",
@@ -522,7 +522,7 @@
     "ip": "172.26.129.58"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--59",
+    "id_1_parent_g_real": "krk-table--59",
     "id_1_parent_g": "table--59",
     "id_2_child_path_table": "table--59",
     "id_3_child_path_reserved": "reserved--59",
@@ -531,7 +531,7 @@
     "ip": "172.26.129.59"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--60",
+    "id_1_parent_g_real": "krk-table--60",
     "id_1_parent_g": "table--60",
     "id_2_child_path_table": "table--60",
     "id_3_child_path_reserved": "reserved--60",
@@ -540,7 +540,7 @@
     "ip": "172.26.129.60"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--61",
+    "id_1_parent_g_real": "krk-table--61",
     "id_1_parent_g": "table--61",
     "id_2_child_path_table": "table--61",
     "id_3_child_path_reserved": "reserved--61",
@@ -549,7 +549,7 @@
     "ip": "172.26.129.61"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--62",
+    "id_1_parent_g_real": "krk-table--62",
     "id_1_parent_g": "table--62",
     "id_2_child_path_table": "table--62",
     "id_3_child_path_reserved": "reserved--62",
@@ -558,7 +558,7 @@
     "ip": "172.26.129.62"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--63",
+    "id_1_parent_g_real": "krk-table--63",
     "id_1_parent_g": "table--63",
     "id_2_child_path_table": "table--63",
     "id_3_child_path_reserved": "reserved--63",
@@ -567,7 +567,7 @@
     "ip": "172.26.129.63"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--64",
+    "id_1_parent_g_real": "krk-table--64",
     "id_1_parent_g": "table--64",
     "id_2_child_path_table": "table--64",
     "id_3_child_path_reserved": "reserved--64",
@@ -576,7 +576,7 @@
     "ip": "172.26.129.64"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--65",
+    "id_1_parent_g_real": "krk-table--65",
     "id_1_parent_g": "table--65",
     "id_2_child_path_table": "table--65",
     "id_3_child_path_reserved": "reserved--65",
@@ -585,7 +585,7 @@
     "ip": "172.26.129.65"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--66",
+    "id_1_parent_g_real": "krk-table--66",
     "id_1_parent_g": "table--66",
     "id_2_child_path_table": "table--66",
     "id_3_child_path_reserved": "reserved--66",
@@ -594,7 +594,7 @@
     "ip": "172.26.129.66"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--67",
+    "id_1_parent_g_real": "krk-table--67",
     "id_1_parent_g": "table--67",
     "id_2_child_path_table": "table--67",
     "id_3_child_path_reserved": "reserved--67",
@@ -603,7 +603,7 @@
     "ip": "172.26.129.67"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--68",
+    "id_1_parent_g_real": "krk-table--68",
     "id_1_parent_g": "table--68",
     "id_2_child_path_table": "table--68",
     "id_3_child_path_reserved": "reserved--68",
@@ -612,7 +612,7 @@
     "ip": "172.26.129.68"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--69",
+    "id_1_parent_g_real": "krk-table--69",
     "id_1_parent_g": "table--69",
     "id_2_child_path_table": "table--69",
     "id_3_child_path_reserved": "reserved--69",
@@ -621,7 +621,7 @@
     "ip": "172.26.129.69"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--70",
+    "id_1_parent_g_real": "krk-table--70",
     "id_1_parent_g": "table--70",
     "id_2_child_path_table": "table--70",
     "id_3_child_path_reserved": "reserved--70",
@@ -630,7 +630,7 @@
     "ip": "172.26.129.70"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--71",
+    "id_1_parent_g_real": "krk-table--71",
     "id_1_parent_g": "table--71",
     "id_2_child_path_table": "table--71",
     "id_3_child_path_reserved": "reserved--71",
@@ -639,7 +639,7 @@
     "ip": "172.26.129.71"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--72",
+    "id_1_parent_g_real": "krk-table--72",
     "id_1_parent_g": "table--72",
     "id_2_child_path_table": "table--72",
     "id_3_child_path_reserved": "reserved--72",
@@ -648,7 +648,7 @@
     "ip": "172.26.129.72"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--73",
+    "id_1_parent_g_real": "krk-table--73",
     "id_1_parent_g": "table--73",
     "id_2_child_path_table": "table--73",
     "id_3_child_path_reserved": "reserved--73",
@@ -657,7 +657,7 @@
     "ip": "172.26.129.73"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--74",
+    "id_1_parent_g_real": "krk-table--74",
     "id_1_parent_g": "table--74",
     "id_2_child_path_table": "table--74",
     "id_3_child_path_reserved": "reserved--74",
@@ -666,7 +666,7 @@
     "ip": "172.26.129.74"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--75",
+    "id_1_parent_g_real": "krk-table--75",
     "id_1_parent_g": "table--75",
     "id_2_child_path_table": "table--75",
     "id_3_child_path_reserved": "reserved--75",
@@ -675,7 +675,7 @@
     "ip": "172.26.129.75"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--76",
+    "id_1_parent_g_real": "krk-table--76",
     "id_1_parent_g": "table--76",
     "id_2_child_path_table": "table--76",
     "id_3_child_path_reserved": "reserved--76",
@@ -684,7 +684,7 @@
     "ip": "172.26.129.76"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--77",
+    "id_1_parent_g_real": "krk-table--77",
     "id_1_parent_g": "table--77",
     "id_2_child_path_table": "table--77",
     "id_3_child_path_reserved": "reserved--77",
@@ -693,7 +693,7 @@
     "ip": "172.26.129.77"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--78",
+    "id_1_parent_g_real": "krk-table--78",
     "id_1_parent_g": "table--78",
     "id_2_child_path_table": "table--78",
     "id_3_child_path_reserved": "reserved--78",
@@ -702,7 +702,7 @@
     "ip": "172.26.129.78"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--79",
+    "id_1_parent_g_real": "krk-table--79",
     "id_1_parent_g": "table--79",
     "id_2_child_path_table": "table--79",
     "id_3_child_path_reserved": "reserved--79",
@@ -711,7 +711,7 @@
     "ip": "172.26.129.79"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--80",
+    "id_1_parent_g_real": "krk-table--80",
     "id_1_parent_g": "table--80",
     "id_2_child_path_table": "table--80",
     "id_3_child_path_reserved": "reserved--80",
@@ -720,7 +720,7 @@
     "ip": "172.26.129.80"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--81",
+    "id_1_parent_g_real": "krk-table--81",
     "id_1_parent_g": "table--81",
     "id_2_child_path_table": "table--81",
     "id_3_child_path_reserved": "reserved--81",
@@ -729,7 +729,7 @@
     "ip": "172.26.129.81"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--82",
+    "id_1_parent_g_real": "krk-table--82",
     "id_1_parent_g": "table--82",
     "id_2_child_path_table": "table--82",
     "id_3_child_path_reserved": "reserved--82",
@@ -738,7 +738,7 @@
     "ip": "172.26.129.82"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--83",
+    "id_1_parent_g_real": "krk-table--83",
     "id_1_parent_g": "table--83",
     "id_2_child_path_table": "table--83",
     "id_3_child_path_reserved": "reserved--83",
@@ -747,7 +747,7 @@
     "ip": "172.26.129.83"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--84",
+    "id_1_parent_g_real": "krk-table--84",
     "id_1_parent_g": "table--84",
     "id_2_child_path_table": "table--84",
     "id_3_child_path_reserved": "reserved--84",
@@ -756,7 +756,7 @@
     "ip": "172.26.129.84"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--85",
+    "id_1_parent_g_real": "krk-table--85",
     "id_1_parent_g": "table--85",
     "id_2_child_path_table": "table--85",
     "id_3_child_path_reserved": "reserved--85",
@@ -765,7 +765,7 @@
     "ip": "172.26.129.85"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--86",
+    "id_1_parent_g_real": "krk-table--86",
     "id_1_parent_g": "table--86",
     "id_2_child_path_table": "table--86",
     "id_3_child_path_reserved": "reserved--86",
@@ -774,7 +774,7 @@
     "ip": "172.26.129.86"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--87",
+    "id_1_parent_g_real": "krk-table--87",
     "id_1_parent_g": "table--87",
     "id_2_child_path_table": "table--87",
     "id_3_child_path_reserved": "reserved--87",
@@ -783,7 +783,7 @@
     "ip": "172.26.129.87"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--88",
+    "id_1_parent_g_real": "krk-table--88",
     "id_1_parent_g": "table--88",
     "id_2_child_path_table": "table--88",
     "id_3_child_path_reserved": "reserved--88",
@@ -792,7 +792,7 @@
     "ip": "172.26.129.88"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--89",
+    "id_1_parent_g_real": "krk-table--89",
     "id_1_parent_g": "table--89",
     "id_2_child_path_table": "table--89",
     "id_3_child_path_reserved": "reserved--89",
@@ -801,7 +801,7 @@
     "ip": "172.26.129.89"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--90",
+    "id_1_parent_g_real": "krk-table--90",
     "id_1_parent_g": "table--90",
     "id_2_child_path_table": "table--90",
     "id_3_child_path_reserved": "reserved--90",
@@ -810,7 +810,7 @@
     "ip": "172.26.129.90"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--91",
+    "id_1_parent_g_real": "krk-table--91",
     "id_1_parent_g": "table--91",
     "id_2_child_path_table": "table--91",
     "id_3_child_path_reserved": "reserved--91",
@@ -819,7 +819,7 @@
     "ip": "172.26.129.91"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--92",
+    "id_1_parent_g_real": "krk-table--92",
     "id_1_parent_g": "table--92",
     "id_2_child_path_table": "table--92",
     "id_3_child_path_reserved": "reserved--92",
@@ -828,7 +828,7 @@
     "ip": "172.26.129.92"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--93",
+    "id_1_parent_g_real": "krk-table--93",
     "id_1_parent_g": "table--93",
     "id_2_child_path_table": "table--93",
     "id_3_child_path_reserved": "reserved--93",
@@ -837,7 +837,7 @@
     "ip": "172.26.129.93"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--94",
+    "id_1_parent_g_real": "krk-table--94",
     "id_1_parent_g": "table--94",
     "id_2_child_path_table": "table--94",
     "id_3_child_path_reserved": "reserved--94",
@@ -846,7 +846,7 @@
     "ip": "172.26.129.94"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--95",
+    "id_1_parent_g_real": "krk-table--95",
     "id_1_parent_g": "table--95",
     "id_2_child_path_table": "table--95",
     "id_3_child_path_reserved": "reserved--95",
@@ -855,7 +855,7 @@
     "ip": "172.26.129.95"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--1m",
+    "id_1_parent_g_real": "krk-table--1m",
     "id_1_parent_g": "table--1m",
     "id_2_child_path_table": "table--1m",
     "id_3_child_path_reserved": "reserved--1m",
@@ -864,7 +864,7 @@
     "ip": "172.26.130.1"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--2m",
+    "id_1_parent_g_real": "krk-table--2m",
     "id_1_parent_g": "table--2m",
     "id_2_child_path_table": "table--2m",
     "id_3_child_path_reserved": "reserved--2m",
@@ -873,7 +873,7 @@
     "ip": "172.26.130.2"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--3m",
+    "id_1_parent_g_real": "krk-table--3m",
     "id_1_parent_g": "table--3m",
     "id_2_child_path_table": "table--3m",
     "id_3_child_path_reserved": "reserved--3m",
@@ -882,7 +882,7 @@
     "ip": "172.26.130.3"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--4m",
+    "id_1_parent_g_real": "krk-table--4m",
     "id_1_parent_g": "table--4m",
     "id_2_child_path_table": "table--4m",
     "id_3_child_path_reserved": "reserved--4m",
@@ -891,7 +891,7 @@
     "ip": "172.26.130.4"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--5m",
+    "id_1_parent_g_real": "krk-table--5m",
     "id_1_parent_g": "table--5m",
     "id_2_child_path_table": "table--5m",
     "id_3_child_path_reserved": "reserved--5m",
@@ -900,7 +900,7 @@
     "ip": "172.26.130.5"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--6m",
+    "id_1_parent_g_real": "krk-table--6m",
     "id_1_parent_g": "table--6m",
     "id_2_child_path_table": "table--6m",
     "id_3_child_path_reserved": "reserved--6m",
@@ -909,7 +909,7 @@
     "ip": "172.26.130.6"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--7m",
+    "id_1_parent_g_real": "krk-table--7m",
     "id_1_parent_g": "table--7m",
     "id_2_child_path_table": "table--7m",
     "id_3_child_path_reserved": "reserved--7m",
@@ -918,7 +918,7 @@
     "ip": "172.26.130.7"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--8m",
+    "id_1_parent_g_real": "krk-table--8m",
     "id_1_parent_g": "table--8m",
     "id_2_child_path_table": "table--8m",
     "id_3_child_path_reserved": "reserved--8m",
@@ -927,7 +927,7 @@
     "ip": "172.26.130.8"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--9m",
+    "id_1_parent_g_real": "krk-table--9m",
     "id_1_parent_g": "table--9m",
     "id_2_child_path_table": "table--9m",
     "id_3_child_path_reserved": "reserved--9m",
@@ -936,7 +936,7 @@
     "ip": "172.26.130.9"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--10m",
+    "id_1_parent_g_real": "krk-table--10m",
     "id_1_parent_g": "table--10m",
     "id_2_child_path_table": "table--10m",
     "id_3_child_path_reserved": "reserved--10m",
@@ -945,7 +945,7 @@
     "ip": "172.26.130.10"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--11m",
+    "id_1_parent_g_real": "krk-table--11m",
     "id_1_parent_g": "table--11m",
     "id_2_child_path_table": "table--11m",
     "id_3_child_path_reserved": "reserved--11m",
@@ -954,7 +954,7 @@
     "ip": "172.26.130.11"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--12m",
+    "id_1_parent_g_real": "krk-table--12m",
     "id_1_parent_g": "table--12m",
     "id_2_child_path_table": "table--12m",
     "id_3_child_path_reserved": "reserved--12m",
@@ -963,7 +963,7 @@
     "ip": "172.26.130.12"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--13m",
+    "id_1_parent_g_real": "krk-table--13m",
     "id_1_parent_g": "table--13m",
     "id_2_child_path_table": "table--13m",
     "id_3_child_path_reserved": "reserved--13m",
@@ -972,7 +972,7 @@
     "ip": "172.26.130.13"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--14m",
+    "id_1_parent_g_real": "krk-table--14m",
     "id_1_parent_g": "table--14m",
     "id_2_child_path_table": "table--14m",
     "id_3_child_path_reserved": "reserved--14m",
@@ -981,7 +981,7 @@
     "ip": "172.26.130.14"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--15m",
+    "id_1_parent_g_real": "krk-table--15m",
     "id_1_parent_g": "table--15m",
     "id_2_child_path_table": "table--15m",
     "id_3_child_path_reserved": "reserved--15m",
@@ -990,7 +990,7 @@
     "ip": "172.26.130.15"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--16m",
+    "id_1_parent_g_real": "krk-table--16m",
     "id_1_parent_g": "table--16m",
     "id_2_child_path_table": "table--16m",
     "id_3_child_path_reserved": "reserved--16m",
@@ -999,7 +999,7 @@
     "ip": "172.26.130.16"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--17m",
+    "id_1_parent_g_real": "krk-table--17m",
     "id_1_parent_g": "table--17m",
     "id_2_child_path_table": "table--17m",
     "id_3_child_path_reserved": "reserved--17m",
@@ -1008,7 +1008,7 @@
     "ip": "172.26.130.17"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--18m",
+    "id_1_parent_g_real": "krk-table--18m",
     "id_1_parent_g": "table--18m",
     "id_2_child_path_table": "table--18m",
     "id_3_child_path_reserved": "reserved--18m",
@@ -1017,7 +1017,7 @@
     "ip": "172.26.130.18"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--19m",
+    "id_1_parent_g_real": "krk-table--19m",
     "id_1_parent_g": "table--19m",
     "id_2_child_path_table": "table--19m",
     "id_3_child_path_reserved": "reserved--19m",
@@ -1026,7 +1026,7 @@
     "ip": "172.26.130.19"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--20m",
+    "id_1_parent_g_real": "krk-table--20m",
     "id_1_parent_g": "table--20m",
     "id_2_child_path_table": "table--20m",
     "id_3_child_path_reserved": "reserved--20m",
@@ -1035,7 +1035,7 @@
     "ip": "172.26.130.20"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--21m",
+    "id_1_parent_g_real": "krk-table--21m",
     "id_1_parent_g": "table--21m",
     "id_2_child_path_table": "table--21m",
     "id_3_child_path_reserved": "reserved--21m",
@@ -1044,7 +1044,7 @@
     "ip": "172.26.130.21"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--22m",
+    "id_1_parent_g_real": "krk-table--22m",
     "id_1_parent_g": "table--22m",
     "id_2_child_path_table": "table--22m",
     "id_3_child_path_reserved": "reserved--22m",
@@ -1053,7 +1053,7 @@
     "ip": "172.26.130.22"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--1s",
+    "id_1_parent_g_real": "krk-table--1s",
     "id_1_parent_g": "table--1s",
     "id_2_child_path_table": "table--1s",
     "id_3_child_path_reserved": "reserved--1s",
@@ -1062,7 +1062,7 @@
     "ip": "172.26.132.1"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--2s",
+    "id_1_parent_g_real": "krk-table--2s",
     "id_1_parent_g": "table--2s",
     "id_2_child_path_table": "table--2s",
     "id_3_child_path_reserved": "reserved--2s",
@@ -1071,7 +1071,7 @@
     "ip": "172.26.132.2"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--3s",
+    "id_1_parent_g_real": "krk-table--3s",
     "id_1_parent_g": "table--3s",
     "id_2_child_path_table": "table--3s",
     "id_3_child_path_reserved": "reserved--3s",
@@ -1080,7 +1080,7 @@
     "ip": "172.26.132.3"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--4s",
+    "id_1_parent_g_real": "krk-table--4s",
     "id_1_parent_g": "table--4s",
     "id_2_child_path_table": "table--4s",
     "id_3_child_path_reserved": "reserved--4s",
@@ -1089,7 +1089,7 @@
     "ip": "172.26.132.4"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--5s",
+    "id_1_parent_g_real": "krk-table--5s",
     "id_1_parent_g": "table--5s",
     "id_2_child_path_table": "table--5s",
     "id_3_child_path_reserved": "reserved--5s",
@@ -1098,7 +1098,7 @@
     "ip": "172.26.132.5"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--6s",
+    "id_1_parent_g_real": "krk-table--6s",
     "id_1_parent_g": "table--6s",
     "id_2_child_path_table": "table--6s",
     "id_3_child_path_reserved": "reserved--6s",
@@ -1107,7 +1107,7 @@
     "ip": "172.26.132.6"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--7s",
+    "id_1_parent_g_real": "krk-table--7s",
     "id_1_parent_g": "table--7s",
     "id_2_child_path_table": "table--7s",
     "id_3_child_path_reserved": "reserved--7s",
@@ -1116,7 +1116,7 @@
     "ip": "172.26.132.7"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--8s",
+    "id_1_parent_g_real": "krk-table--8s",
     "id_1_parent_g": "table--8s",
     "id_2_child_path_table": "table--8s",
     "id_3_child_path_reserved": "reserved--8s",
@@ -1125,7 +1125,7 @@
     "ip": "172.26.132.8"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--9s",
+    "id_1_parent_g_real": "krk-table--9s",
     "id_1_parent_g": "table--9s",
     "id_2_child_path_table": "table--9s",
     "id_3_child_path_reserved": "reserved--9s",
@@ -1134,7 +1134,7 @@
     "ip": "172.26.132.9"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--10s",
+    "id_1_parent_g_real": "krk-table--10s",
     "id_1_parent_g": "table--10s",
     "id_2_child_path_table": "table--10s",
     "id_3_child_path_reserved": "reserved--10s",
@@ -1143,7 +1143,7 @@
     "ip": "172.26.132.10"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--11s",
+    "id_1_parent_g_real": "krk-table--11s",
     "id_1_parent_g": "table--11s",
     "id_2_child_path_table": "table--11s",
     "id_3_child_path_reserved": "reserved--11s",
@@ -1152,7 +1152,7 @@
     "ip": "172.26.132.11"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--12s",
+    "id_1_parent_g_real": "krk-table--12s",
     "id_1_parent_g": "table--12s",
     "id_2_child_path_table": "table--12s",
     "id_3_child_path_reserved": "reserved--12s",
@@ -1161,7 +1161,7 @@
     "ip": "172.26.132.12"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--13s",
+    "id_1_parent_g_real": "krk-table--13s",
     "id_1_parent_g": "table--13s",
     "id_2_child_path_table": "table--13s",
     "id_3_child_path_reserved": "reserved--13s",
@@ -1170,7 +1170,7 @@
     "ip": "172.26.132.13"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--14s",
+    "id_1_parent_g_real": "krk-table--14s",
     "id_1_parent_g": "table--14s",
     "id_2_child_path_table": "table--14s",
     "id_3_child_path_reserved": "reserved--14s",
@@ -1179,7 +1179,7 @@
     "ip": "172.26.132.14"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--15s",
+    "id_1_parent_g_real": "krk-table--15s",
     "id_1_parent_g": "table--15s",
     "id_2_child_path_table": "table--15s",
     "id_3_child_path_reserved": "reserved--15s",
@@ -1188,7 +1188,7 @@
     "ip": "172.26.132.15"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--16s",
+    "id_1_parent_g_real": "krk-table--16s",
     "id_1_parent_g": "table--16s",
     "id_2_child_path_table": "table--16s",
     "id_3_child_path_reserved": "reserved--16s",
@@ -1197,7 +1197,7 @@
     "ip": "172.26.132.16"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--17s",
+    "id_1_parent_g_real": "krk-table--17s",
     "id_1_parent_g": "table--17s",
     "id_2_child_path_table": "table--17s",
     "id_3_child_path_reserved": "reserved--17s",
@@ -1206,7 +1206,7 @@
     "ip": "172.26.132.17"
   },
   {
-    "id_1_parent_g_real": "KRK-L7--table--18s",
+    "id_1_parent_g_real": "krk-table--18s",
     "id_1_parent_g": "table--18s",
     "id_2_child_path_table": "table--18s",
     "id_3_child_path_reserved": "reserved--18s",
