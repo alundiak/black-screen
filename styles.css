@@ -8,7 +8,7 @@ html, body, * {
 header {
   background: #333;
   overflow: hidden;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
   width: 100%;
   color: white;
   height: 60px;
@@ -25,7 +25,17 @@ header .black-screen-header {
 }
 
 #krk-map {
+  border: 1px dashed red;
   margin-top: -100px;
+}
+
+.top-container {
+  display: inline-block;
+}
+
+.svg-container {
+  display: inline-block;
+  width: 74%;
 }
 
 .bs-content .loading-indicator {

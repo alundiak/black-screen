@@ -15,18 +15,19 @@
   </header>
 
   <div class="bs-content">
-    <div class="buttons">
-      <button class="ui positive button scan-network">Scan Network</button>
-      <!-- TODO: change to some progress bar from materialize use-->
+    <div class="top-container">
+      <div class="buttons">
+        <button class="ui positive button scan-network">Scan Network</button>
         <span class="loading-indicator">loading...</span>
-    </div>
+      </div>
 
-    <textarea class="text-container" cols=200 rows=8></textarea>
+      <textarea class="text-container" cols=50 rows=25></textarea>
 
-    <div class="buttons">
-      <button class="ui positive button show-on-map disabled" title="Show on Map">Show on Map</button>
-      <button class="ui positive button shut-down-all disabled" title="Shut Down All">Shut Down All</button>
-      <span class="loading-indicator shut-down">loading...</span>
+      <div class="buttons">
+        <button class="ui positive button show-on-map disabled" title="Show on Map">Show on Map</button>
+        <button class="ui positive button shut-down-all disabled" title="Shut Down All">Shut Down All</button>
+        <span class="loading-indicator shut-down">loading...</span>
+      </div>
     </div>
 
     <div class="svg-container">
@@ -1223,7 +1224,6 @@
     </div>
   </div>
 
-    <!--TODO: discuss - use webpack as module loader ??-->
     <script type="module" src="index.js"></script>
 </body>
 
