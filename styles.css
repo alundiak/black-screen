@@ -24,6 +24,10 @@ header .black-screen-header {
   margin: 20px auto;
 }
 
+#krk-map {
+  margin-top: -100px;
+}
+
 .bs-content .loading-indicator {
   display: none;
 }
