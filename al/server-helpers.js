@@ -72,6 +72,7 @@ module.exports.convertCsvToArray = function(convertOptions) {
                     resultArr = arr.filter(function(element) {
                         return element.indexOf('krk1-lhp') !== -1
                     })
+                    // console.log(JSON.stringify(resultArr, null, 2));
                 } else {
                     resultArr = arr;
                 }
@@ -84,21 +85,31 @@ module.exports.convertCsvToArray = function(convertOptions) {
     });
 }
 
-module.exports.liveScan = function(networksData) {
+module.exports.liveScan = function(networksData, options) {
     const hostUp = 'Host is up';
     const hostDown = 'Host seems down';
+    const hostDown2 = '0 hosts up';
     const doneTemplate = 'Nmap done: 1792 IP addresses (161 hosts up) scanned in 85.99 seconds';
+    // https://www.regular-expressions.info/ip.html
+    // https://stackoverflow.com/questions/5284147/validating-ipv4-addresses-with-regexp
+    const ipv4Pattern = '\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b'; // use ip or ip-address NPM module
 
     const shell = require('shelljs')
 
     // var 1
-    let newData = appendHostName(networksData)
+    let newData = options.scanWithVPN ? appendHostName(networksData) : networksData;
     let networksStr = newData.join(' ')
     let commandStr = `nmap -sn ${networksStr}`
+    // console.log(commandStr);
 
     return new Promise((resolve, reject) => {
         shell.exec(commandStr, function(code, stdout, stderr) {
+            // stdout - is entire nmap command response
             writeToLogFile(stdout) // optional step, for debugging
+
+            // let ips[] = parseStdOut() 
+            // and get IP address if host is UP, rest assume down
+            // => scan2.sh
 
             console.log('Looks like all done')
 

@@ -9,7 +9,9 @@ var liveScan = serverHelpers.liveScan
 var host2ip = serverHelpers.host2ip
 var createFakeJson = serverHelpers.createFakeJson
 
-app.set('port', (process.env.PORT || 5000)); // process.env.PORT is for Heroku instance
+const vpn = true;
+
+app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/'));
 
@@ -23,7 +25,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/scan', async function(request, response) {
-    // alternative 
+    // alternative to '/scan/:customHostname'
     // var url = require('url');
     // var url_parts = url.parse(request.url, true);
     // console.log(url_parts);
@@ -38,10 +40,12 @@ app.get('/scan', async function(request, response) {
     })
     // console.log(dataFromConvert);
     // optional step
-    host2ip(dataFromConvert);
+    // host2ip(dataFromConvert);
 
     // step 2 - scan network with nmap by providing dataFromConvert
-    var dataFromScan = await liveScan(dataFromConvert)
+    var dataFromScan = await liveScan(dataFromConvert, {
+      scanWithVPN: vpn
+    })
 
     response.status(200).json({
         data: dataFromScan
@@ -55,7 +59,9 @@ app.get('/scan/:customHostname', async function(request, response) {
   // console.log(ip.address()); // my IP
 
   // TODO validate request.params.customHostname as valid hostname
-  var dataFromScan = await liveScan([request.params.customHostname])
+  var dataFromScan = await liveScan([request.params.customHostname], {
+    scanWithVPN: vpn
+  })
 
   response.status(200).json({
       data: dataFromScan

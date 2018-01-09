@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Scan Network</title>
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div>
-        <label title="if omitted, then full scan by all networks will go">Enter custom hostname or IP to scan</label>
-        <input type="text" name="host_to_scan" class="host-to-scan">
-    </div>
-    
-    <div>
-        <label>Upload text file with hosts or IPs or subnets (each as new line)</label>
-        <input type="file" name="hosts_to_scan" class="hosts-to-scan">
-    </div>
-    
-	<div>
-    	<button  class="scan-network">Find PCs</button>
-        <span class="loading-indicator" style="display: none;">loading...</span>
-	</div>
 
-    <div>
-        <textarea class="text-container" cols=200 rows=30></textarea>
+<head>
+    <title>Scan Network</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css">
+    <link rel="stylesheet" type="text/css" href="scan.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
+</head>
+
+<body>
+    <div class="ui top attached segment">
+        <form class="ui form">
+            <div class="fields">
+                <div class="four wide field">
+                    <label>Enter custom hostname or IP to scan</label>
+                    <input type="text" name="host_to_scan" class="host-to-scan" placeholder="ip or hostname">
+                </div>
+                <div class="five wide field">
+                    <label>Or</label>
+                    <label for="file" class="ui icon button"><i class="upload icon"></i>Upload text file with hosts or IPs or subnets (each as new line)</label>
+                    <input type="file" id="file" name="hosts_to_scan" class="hosts-to-scan">
+                </div>
+                <div class="buttons-container">
+                    <button type="button" class="ui primary button scan-network">Find PCs</button>
+                </div>
+            </div>
+            <div>
+                <textarea class="text-container" cols=200 rows=30></textarea>
+            </div>
+        </form>
     </div>
-    
     <script type="text/javascript" src="scan.js"></script>
 </body>
+
 </html>
