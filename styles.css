@@ -5,6 +5,10 @@ html, body, * {
   margin: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 header {
   background: #333;
   overflow: hidden;
@@ -243,4 +247,37 @@ header .black-screen-header {
 
 .conf_placeholder {
   fill: #F6F8F8;
+}
+
+#wrapper {
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 100%;
+  /*overflow: hidden;*/
+  text-align: center;
+}
+
+#stage {
+  box-sizing: border-box;
+  padding: 0 40px 0 0;
+  margin: 20px auto 0;
+  text-align: center;
+  max-width: 100%;
+}
+
+.intro {
+  z-index: 9999;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  background: black;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.dg.ac {
+  display: none;
 }
