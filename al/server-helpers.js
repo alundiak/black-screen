@@ -22,7 +22,7 @@ function appendHostName(hostnamesArray, hostnameToAppend) {
  */
 function writeToLogFile(logsStr) {
     const fs = require('fs')
-    const fileName = 'al/scan.log';
+    const fileName = 'al/logs/scan.log';
     fs.writeFile(fileName, logsStr, function(err) {
         if (err) return console.log(err);
     });
@@ -150,6 +150,23 @@ module.exports.liveScanWithFile = function(options) {
             resolve(stdout)
         });
     })
+}
+
+module.exports.parseNmapReportOutput_CLI = function(options) {
+    const shell = require('shelljs')
+    let commandStr = `./al/scan_networks.sh`;
+
+    return new Promise((resolve, reject) => {
+        shell.exec(commandStr, function(code, stdout, stderr) {
+            console.log(stdout);
+            resolve(stdout)
+        });
+    })
+}
+
+module.exports.parseNmapReportOutput = function(nmapData) {
+  // Port the logic here from al/scan_networks.sh
+  return nmapData;
 }
 
 module.exports.host2ip = function(hostnamesArray) {

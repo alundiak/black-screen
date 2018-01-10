@@ -8,6 +8,8 @@ var convertCsvToArray = serverHelpers.convertCsvToArray
 var writeToJsonFile = serverHelpers.writeToJsonFile
 var liveScan = serverHelpers.liveScan
 var liveScanWithFile = serverHelpers.liveScanWithFile
+var parseNmapReportOutput = serverHelpers.parseNmapReportOutput
+var parseNmapReportOutput_CLI = serverHelpers.parseNmapReportOutput_CLI
 var host2ip = serverHelpers.host2ip
 var createFakeJson = serverHelpers.createFakeJson
 
@@ -82,11 +84,16 @@ async function variantWithSingleScan(options) {
     return dataFromScan;
 }
 
-// based on custom hardcode file al/gl.txt where listed Network Sub Nets
+// based on custom hardcode file al/gl_networks.txt where listed Network Sub Nets
 async function variantWithSubnetScan(options) {
     let dataFromScan = await liveScanWithFile({
       filePath: 'al/gl_networks.txt'
     })
+
+    if (options.parseData){
+      // dataFromScan = parseNmapReportOutput(dataFromScan);     // TODO
+      dataFromScan = parseNmapReportOutput_CLI(dataFromScan);
+    }
 
     return dataFromScan;
 }
@@ -100,7 +107,10 @@ app.get('/scan', async function(request, response) {
         // console.log(query.customHostname);
 
         // let dataFromScan = await variantWithDedicatedCsv();
-        let dataFromScan = await variantWithSubnetScan();
+        // let dataFromScan = await variantWithSubnetScan();
+        let dataFromScan = await variantWithSubnetScan({
+          parseData: true
+        });
 
         response.status(200).json({
             data: await dataFromScan
