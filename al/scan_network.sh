@@ -99,7 +99,7 @@ nslookup krk1-lhp-f61897 | grep -e 'Address: ' | tail -1 | sed -e 's/Address: */
 
 ping -a krk1-lhp-f61897 -c 1
 # but not all KRK- hosts are pinged/available from VPN
-# Need to try from office.
+# Need to try from office. Tried. Almost all krk1-lhp-f61897-like hostnames are not resolved from office
 
 #
 # Other commands: 

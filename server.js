@@ -5,11 +5,22 @@ var bodyParser = require('body-parser')
 
 var serverHelpers = require('./al/server-helpers')
 var convertCsvToArray = serverHelpers.convertCsvToArray
+var writeToJsonFile = serverHelpers.writeToJsonFile
 var liveScan = serverHelpers.liveScan
+var liveScanWithFile = serverHelpers.liveScanWithFile
+var parseNmapReportOutput = serverHelpers.parseNmapReportOutput
+var parseNmapReportOutput_CLI = serverHelpers.parseNmapReportOutput_CLI
 var host2ip = serverHelpers.host2ip
 var createFakeJson = serverHelpers.createFakeJson
 
-app.set('port', (process.env.PORT || 5000)); // process.env.PORT is for Heroku instance
+// use true, if u scan with enabled GL VPN (assuming you are located NOT in the GL office)
+// use false, if u scan in GL office.
+// Looks like not much helpful, because no matter what value, 
+// if NO Cisco VPN enabled, all hostnames not reachable/resolved from laptop connected via WiFi
+// And if Cisco VPN enabled, then hostnames resolved (with or without suffix synapse.com)
+const vpn = false;
+
+app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/'));
 
@@ -22,49 +33,103 @@ app.get('/', function(request, response) {
     response.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.get('/scan', async function(request, response) {
-    // alternative 
-    // var url = require('url');
-    // var url_parts = url.parse(request.url, true);
-    // console.log(url_parts);
-    // var query = url_parts.query;
-    // console.log(query.customHostname);
+async function convertAndWrite() {
+    // this code is executed when server starts, and it takes CSV file and convert to JSON, for further usage during scan.html usage
+    let arr = await convertCsvToArray({
+        filePath: 'al/gl_computers.csv',
+        filterKrkOnly: true
+    })
 
+    // optional step
+    // host2ip(arr);
+
+    // optional
+    writeToJsonFile(arr, {
+        filePath: 'al/gl_computers.json'
+    })
+
+    return arr;
+}
+
+// The reason is why it's converted on server startup, 
+// because CSV is constant and JS array will be constant, and generated JSON file also not changed.
+// But in fact it's used ONLY by variantWithDedicatedCsv() which is called on every /scan GET request
+var dataFromConvert = convertAndWrite();
+
+// based on list of krk1-lhp-p00949 records of hostnames
+async function variantWithDedicatedCsv(options) {
     // step 1 - convert csv to json
     // step 1 (alternative) - get mocked list from JSON file (fake.json). TODO
-
-    var dataFromConvert = await convertCsvToArray({
-      filterKrkOnly: true
-    })
-    // console.log(dataFromConvert);
-    // optional step
-    host2ip(dataFromConvert);
+    // step 2 - optional - validate IP
+    // https://www.npmjs.com/package/ip
+    // nice, but maybe not yet needed.
+    // var ip = require('ip');
+    // console.log(ip.address()); // my IP 
 
     // step 2 - scan network with nmap by providing dataFromConvert
-    var dataFromScan = await liveScan(dataFromConvert)
-
-    response.status(200).json({
-        data: dataFromScan
+    let dataFromScan = await liveScan(await dataFromConvert, {
+        scanWithVPN: vpn
     });
-});
+
+    return dataFromScan;
+}
+
+// based on custom value for single IP address or hostname from UI
+async function variantWithSingleScan(options) {
+    // TODO valdataFromScaningDate request.params.customHostname as valid hostname
+    let dataFromScan = await liveScan([options.request.params.customHostname], {
+        scanWithVPN: vpn
+    })
+
+    return dataFromScan;
+}
+
+// based on custom hardcode file al/gl_networks.txt where listed Network Sub Nets
+async function variantWithSubnetScan(options) {
+    let dataFromScan = await liveScanWithFile({
+      filePath: 'al/gl_networks.txt'
+    })
+
+    if (options.parseData){
+      // dataFromScan = parseNmapReportOutput(dataFromScan);     // TODO
+      dataFromScan = parseNmapReportOutput_CLI(dataFromScan);
+    }
+
+    return dataFromScan;
+}
+
+app.get('/scan', async function(request, response) {
+        // alternative to '/scan/:customHostname'
+        // var url = require('url');
+        // var url_parts = url.parse(request.url, true);
+        // console.log(url_parts);
+        // var query = url_parts.query;
+        // console.log(query.customHostname);
+
+        // let dataFromScan = await variantWithDedicatedCsv();
+        // let dataFromScan = await variantWithSubnetScan();
+        let dataFromScan = await variantWithSubnetScan({
+          parseData: true
+        });
+
+        response.status(200).json({
+            data: await dataFromScan
+        });
+    });
 
 app.get('/scan/:customHostname', async function(request, response) {
-  // https://www.npmjs.com/package/ip
-  // nice, but maybe not yet needed.
-  // var ip = require('ip');
-  // console.log(ip.address()); // my IP
+        let dataFromScan = await variantWithSingleScan({
+            request: request
+        });
 
-  // TODO validate request.params.customHostname as valid hostname
-  var dataFromScan = await liveScan([request.params.customHostname])
-
-  response.status(200).json({
-      data: dataFromScan
-  });   
-});
+        response.status(200).json({
+            data: dataFromScan
+        });
+    });
 
 app.get('/fake', function(request, response) {
-  let fakeArr = createFakeJson();
-  response.status(200).json(fakeArr);
+    let fakeArr = createFakeJson();
+    response.status(200).json(fakeArr);
 });
 
 /**
@@ -78,9 +143,9 @@ app.get('/fake', function(request, response) {
  * 
  */
 app.get('/api/hostnames', function(request, response) {
-  let testData = require('./al/gl_computers.json');
+    let testData = require('./al/gl_computers.json');
 
-  response.status(200).json(testData);
+    response.status(200).json(testData);
 });
 
 app.listen(app.get('port'), function() {

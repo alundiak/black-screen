@@ -56,4 +56,7 @@
     }
 
     $shutDownAll.on('click', shutDownAllClickHandler);
+
+    $( ".intro" ).delay(1500).toggle( "clip" ); // 1,5 sec before intro fadeout
+  
 }());

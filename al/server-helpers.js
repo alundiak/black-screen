@@ -22,36 +22,36 @@ function appendHostName(hostnamesArray, hostnameToAppend) {
  */
 function writeToLogFile(logsStr) {
     const fs = require('fs')
-    const fileName = 'al/scan.log';
+    const fileName = 'al/logs/scan.log';
     fs.writeFile(fileName, logsStr, function(err) {
         if (err) return console.log(err);
-        // console.log('writing to ' + fileName);
     });
 }
 
 /**
  * Helper function to write JSON data into *.JSON file with proper formating for further usage
  * @param  {[Array]} jsonData
- * @param {[String]} fileName
+ * @param {[Object]} options
  * @return {[void]}
  */
-function writeToJsonFile(jsonData, fileName) {
+module.exports.writeToJsonFile = function(jsonData, options) {
     const fs = require('fs')
 
     // https://stackoverflow.com/questions/10685998/how-to-update-a-value-in-a-json-file-and-save-it-through-node-js
     let content = JSON.stringify(jsonData, null, 2)
 
-    fs.writeFile(fileName, content, function(err) {
+    fs.writeFile(options.filePath, content, function(err) {
         if (err) return console.log(err);
-        // console.log('writing to ' + fileName);
     });
 }
 
-//
-// Module to design live network scanning
-//
-module.exports.convertCsvToArray = function(convertOptions) {
-    const csvFilePath = 'al/gl_computers.csv'
+/**
+ * Convert GL created CSV file with hostnames to simple JS/JSON Array
+ * @param  {[type]} options [.filePath (String) and .filterKrkOnly (Boolean)]
+ * @return {[type]}         [description]
+ */
+module.exports.convertCsvToArray = function(options) {
+    const csvFilePath = options.filePath
     const csv = require('csvtojson')
 
     return new Promise((resolve, reject) => {
@@ -68,39 +68,46 @@ module.exports.convertCsvToArray = function(convertOptions) {
                 arr.push(jsonObj['Short Description']);
             })
             .on('done', (error) => {
-                if (convertOptions.filterKrkOnly) {
+                if (options.filterKrkOnly) {
                     resultArr = arr.filter(function(element) {
                         return element.indexOf('krk1-lhp') !== -1
                     })
                 } else {
                     resultArr = arr;
                 }
-
-                writeToJsonFile(resultArr, 'al/gl_computers.json')
-
                 resolve(resultArr);
             })
 
     });
 }
 
-module.exports.liveScan = function(networksData) {
+module.exports.liveScan = function(networksData, options) {
     const hostUp = 'Host is up';
     const hostDown = 'Host seems down';
+    const hostDown2 = '0 hosts up';
     const doneTemplate = 'Nmap done: 1792 IP addresses (161 hosts up) scanned in 85.99 seconds';
+    // https://www.regular-expressions.info/ip.html
+    // https://stackoverflow.com/questions/5284147/validating-ipv4-addresses-with-regexp
+    const ipv4Pattern = '\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b'; // use ip or ip-address NPM module
 
     const shell = require('shelljs')
 
     // var 1
-    let newData = appendHostName(networksData)
+    let newData = options.scanWithVPN ? appendHostName(networksData) : networksData;
     let networksStr = newData.join(' ')
     let commandStr = `nmap -sn ${networksStr}`
+    console.log(commandStr);
 
     return new Promise((resolve, reject) => {
         shell.exec(commandStr, function(code, stdout, stderr) {
+            // stdout - is entire nmap command response
             writeToLogFile(stdout) // optional step, for debugging
 
-            console.log('Looks like all done')
+            // let ips[] = parseStdOut() 
+            // and get IP address if host is UP, rest assume down
+            // => scan2.sh
+
+            console.log('Live Scan is finished')
 
             resolve(stdout)
         });
@@ -129,6 +136,37 @@ module.exports.liveScan = function(networksData) {
     // });
 
     // TODO decide which way is better by performance: running command using shelljs or execute scan.sh by NodeJS/shellJs or better way.
+}
+
+module.exports.liveScanWithFile = function(options) {
+    const shell = require('shelljs')
+    let commandStr = `nmap -sn -iL ${options.filePath}`;
+
+    return new Promise((resolve, reject) => {
+        shell.exec(commandStr, function(code, stdout, stderr) {
+            // stdout - is entire nmap command response
+            writeToLogFile(stdout) // optional step, for debugging
+            console.log('Live Subnets Scan is finished')
+            resolve(stdout)
+        });
+    })
+}
+
+module.exports.parseNmapReportOutput_CLI = function(options) {
+    const shell = require('shelljs')
+    let commandStr = `./al/scan_networks.sh`;
+
+    return new Promise((resolve, reject) => {
+        shell.exec(commandStr, function(code, stdout, stderr) {
+            console.log(stdout);
+            resolve(stdout)
+        });
+    })
+}
+
+module.exports.parseNmapReportOutput = function(nmapData) {
+  // Port the logic here from al/scan_networks.sh
+  return nmapData;
 }
 
 module.exports.host2ip = function(hostnamesArray) {

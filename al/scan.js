@@ -2,7 +2,10 @@
     const $scanNetwork = $('.scan-network');
     const $hostToScan = $('.host-to-scan');
 
-    $scanNetwork.on('click', function() {
+    $scanNetwork.on('click', function(e) {
+        e.preventDefault(); // to avoid form submit
+        $scanNetwork.addClass('loading'); //SemanticUI
+        
         $('.text-container').text('');
         $('.loading-indicator').show();
         
@@ -19,11 +22,10 @@
         $.get({
             url: urlStr,
             success: function(xhrData) {
-                console.log(xhrData);
                 $('.text-container').text(xhrData.data);
             },
             complete: function() {
-                $('.loading-indicator').hide();
+                $scanNetwork.removeClass('loading');
             }
         });
     });

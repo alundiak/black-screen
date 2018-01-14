@@ -1,3 +1,4 @@
-172.26.129.200
-172.26.129.227
-172.26.142.175
+172.26.129.200 # ???
+172.26.129.213 # via GL-KRK-VLAN or via GL-Corp. "krk1-lhp-p00912" my hostname points to this IP, even if ip on that PC is diff.
+172.26.129.227 # via LAN
+172.26.142.175 # ???
