@@ -5,11 +5,15 @@
   <title>Black Screen</title>
   <meta charset="utf-8" />
   <link href='https://fonts.googleapis.com/css?family=Orbitron:900' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css">
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css">
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script>
+  <script
+            src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -27,7 +31,6 @@
     <div class="top-container">
       <div class="buttons">
         <button class="ui positive button scan-network">Scan Network</button>
-        <span class="loading-indicator">loading...</span>
       </div>
 
       <textarea class="text-container" rows=25></textarea>
@@ -35,7 +38,6 @@
       <div class="buttons">
         <button class="ui positive button show-on-map disabled" title="Show on Map">Show on Map</button>
         <button class="ui positive button shut-down-all disabled" title="Shut Down All">Shut Down All</button>
-        <span class="loading-indicator shut-down">loading...</span>
       </div>
     </div>
 

@@ -3,53 +3,66 @@
     const $showOnMap = $('.show-on-map');
     const $shutDownAll = $('.shut-down-all');
     let fakeJsonArray;
+		const randomizedScannedIpsArray = [];
+    const ipsArr = [];
+    let ipsStr;
 
-    const fakeScanClickHandler = () => {
-        $('.loading-indicator').show();
-        $.get({
-            url: '/fake',
-            success: xhrData => {
-                fakeJsonArray = xhrData;
+		// mounting ids with ips onload
+		$.get({
+				url: '/fake',
+				success: xhrData => {
+						fakeJsonArray = xhrData;
 
-                let ipsArr = xhrData.map(element => element.ip);
-                let ipsStr = ipsArr.join(', ');
+						fakeJsonArray.forEach(pair => {
+							let cssSelector = `#${pair.id_g} path`;
+	            $(cssSelector).attr('data-ip', `${pair.ip}`);
+							ipsArr.push(pair.ip);
+						});
+				}
+		});
 
-                $('.text-container').text(ipsStr);
+    const randomFakeScan = () => {
+        $('.scan-network').addClass('loading');
 
-                if (fakeJsonArray && fakeJsonArray.length) {
-                  $showOnMap.removeClass('disabled');
-                  $shutDownAll.removeClass('disabled');
-                }
-            },
-            complete: () => {
-                $('.loading-indicator').hide();
-            }
-        });
+				setTimeout(() => {
+					randomizedScannedIpsArray.length = 0;
+					const numberOdTries = Math.floor(Math.random()*60);
+					const ipsArrLength = ipsArr.length;
+
+					for (let i = 0; i < numberOdTries; i++) {
+						randomizedScannedIpsArray.push(ipsArr[Math.floor(Math.random()*ipsArrLength)]);
+					}
+
+					ipsStr = randomizedScannedIpsArray.join(', ')
+					$('.text-container').text(ipsStr);
+          $scanNetwork.removeClass('loading');
+          $shutDownAll.removeClass('disabled');
+					$showOnMap.removeClass('disabled');
+        }, 1200);
     }
 
-    $scanNetwork.on('click', fakeScanClickHandler);
+    $scanNetwork.on('click', randomFakeScan);
 
     const showOnMapClickHandler = () => {
         $('.host-up').removeClass('host-up');
 
-        for (let i = 0; i < fakeJsonArray.length; i++) {
-            let id1 = fakeJsonArray[i].id_1_parent_g_real;
-            let cssSelector = `#${id1} path`;
-            $(cssSelector).addClass('host-up');
-        }
+				randomizedScannedIpsArray.forEach(ip => {
+					let cssSelector = `[data-ip="${ip}"]`;
+					$(cssSelector).addClass('host-up');
+				});
     }
 
     $showOnMap.on('click', showOnMapClickHandler);
 
     const shutDownAllClickHandler = () => {
-        $('.loading-indicator.shut-down').show();
+        $('.shut-down-all').addClass('loading');
         $scanNetwork.addClass('disabled');
         $showOnMap.addClass('disabled');
 
         setTimeout(() => {
           $('.text-container').text('');
           $('.host-up').removeClass('host-up');
-          $('.loading-indicator.shut-down').hide();
+					$('.shut-down-all').removeClass('loading');
           $scanNetwork.removeClass('disabled');
           $shutDownAll.addClass('disabled');
         }, 2000);
@@ -57,6 +70,5 @@
 
     $shutDownAll.on('click', shutDownAllClickHandler);
 
-    $( ".intro" ).delay(1500).toggle( "clip" ); // 1,5 sec before intro fadeout
-  
+    $('.intro').delay(1500).toggle('clip'); // 1,5 sec before intro fadeout
 }());

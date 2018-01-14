@@ -1,21 +1,21 @@
-var express = require('express')
-var path = require('path')
-var app = express()
-var bodyParser = require('body-parser')
+const express = require('express')
+const path = require('path')
+const app = express()
+const bodyParser = require('body-parser')
 
-var serverHelpers = require('./al/server-helpers')
-var convertCsvToArray = serverHelpers.convertCsvToArray
-var writeToJsonFile = serverHelpers.writeToJsonFile
-var liveScan = serverHelpers.liveScan
-var liveScanWithFile = serverHelpers.liveScanWithFile
-var parseNmapReportOutput = serverHelpers.parseNmapReportOutput
-var parseNmapReportOutput_CLI = serverHelpers.parseNmapReportOutput_CLI
-var host2ip = serverHelpers.host2ip
-var createFakeJson = serverHelpers.createFakeJson
+const serverHelpers = require('./al/server-helpers')
+const convertCsvToArray = serverHelpers.convertCsvToArray
+const writeToJsonFile = serverHelpers.writeToJsonFile
+const liveScan = serverHelpers.liveScan
+const liveScanWithFile = serverHelpers.liveScanWithFile
+const parseNmapReportOutput = serverHelpers.parseNmapReportOutput
+const parseNmapReportOutput_CLI = serverHelpers.parseNmapReportOutput_CLI
+const host2ip = serverHelpers.host2ip
+const createFakeJson = serverHelpers.createFakeJson
 
 // use true, if u scan with enabled GL VPN (assuming you are located NOT in the GL office)
 // use false, if u scan in GL office.
-// Looks like not much helpful, because no matter what value, 
+// Looks like not much helpful, because no matter what value,
 // if NO Cisco VPN enabled, all hostnames not reachable/resolved from laptop connected via WiFi
 // And if Cisco VPN enabled, then hostnames resolved (with or without suffix synapse.com)
 const vpn = false;
@@ -51,7 +51,7 @@ async function convertAndWrite() {
     return arr;
 }
 
-// The reason is why it's converted on server startup, 
+// The reason is why it's converted on server startup,
 // because CSV is constant and JS array will be constant, and generated JSON file also not changed.
 // But in fact it's used ONLY by variantWithDedicatedCsv() which is called on every /scan GET request
 var dataFromConvert = convertAndWrite();
@@ -64,7 +64,7 @@ async function variantWithDedicatedCsv(options) {
     // https://www.npmjs.com/package/ip
     // nice, but maybe not yet needed.
     // var ip = require('ip');
-    // console.log(ip.address()); // my IP 
+    // console.log(ip.address()); // my IP
 
     // step 2 - scan network with nmap by providing dataFromConvert
     let dataFromScan = await liveScan(await dataFromConvert, {
@@ -138,9 +138,9 @@ app.get('/fake', function(request, response) {
  * Planed ass suggestion for everyone who want to use "Black Screen" product/page.
  * Suggestion is based on the fact, that different offices can have different hostnames.
  * By implementing this endpoint dedicated data structure should be followed, so that application can be
- * Also, using API it's expected, that we draw a map of computers, 
+ * Also, using API it's expected, that we draw a map of computers,
  * which is simple grid, and we show IP Address and status (is up or is down)
- * 
+ *
  */
 app.get('/api/hostnames', function(request, response) {
     let testData = require('./al/gl_computers.json');

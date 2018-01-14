@@ -103,7 +103,7 @@ module.exports.liveScan = function(networksData, options) {
             // stdout - is entire nmap command response
             writeToLogFile(stdout) // optional step, for debugging
 
-            // let ips[] = parseStdOut() 
+            // let ips[] = parseStdOut()
             // and get IP address if host is UP, rest assume down
             // => scan2.sh
 
@@ -202,6 +202,8 @@ module.exports.host2ip = function(hostnamesArray) {
 }
 
 module.exports.createFakeJson = function() {
+		// don't like this line
+		const writeToJsonFile = require('./server-helpers').writeToJsonFile;
     const nDesks = 95;
     const nDesksM = 22;
     const nDesksS = 18;
@@ -210,12 +212,7 @@ module.exports.createFakeJson = function() {
 
     for (var i = 1; i <= nDesks; i++) {
         desks.push({
-            id_1_parent_g_real: 'krk-table--' + i,
-            id_1_parent_g: 'table--' + i,
-            id_2_child_path_table: 'table--' + i,
-            id_3_child_path_reserved: 'reserved--' + i,
-            id_4_child_path_equipment: 'equipment--' + i,
-            id_5_child_g_text: 'text--' + i,
+            id_g: 'krk-table--' + i,
             ip: '172.26.129.' + i
         })
     }
@@ -223,12 +220,7 @@ module.exports.createFakeJson = function() {
     // m - meaning MiniMed ? MedTronic?
     for (var i = 1; i <= nDesksM; i++) {
         desks.push({
-            id_1_parent_g_real: 'krk-table--' + i + 'm',
-            id_1_parent_g: 'table--' + i + 'm',
-            id_2_child_path_table: 'table--' + i + 'm',
-            id_3_child_path_reserved: 'reserved--' + i + 'm',
-            id_4_child_path_equipment: 'equipment--' + i + 'm',
-            id_5_child_g_text: 'text--' + i,
+            id_g: 'krk-table--' + i + 'm',
             ip: '172.26.130.' + i
         })
     }
@@ -236,17 +228,12 @@ module.exports.createFakeJson = function() {
     // s - meaning Small Projects?
     for (var i = 1; i <= nDesksS; i++) {
         desks.push({
-            id_1_parent_g_real: 'krk-table--' + i + 's',
-            id_1_parent_g: 'table--' + i + 's',
-            id_2_child_path_table: 'table--' + i + 's',
-            id_3_child_path_reserved: 'reserved--' + i + 's',
-            id_4_child_path_equipment: 'equipment--' + i + 's',
-            id_5_child_g_text: 'text--' + i,
+            id_g: 'krk-table--' + i + 's',
             ip: '172.26.132.' + i
         })
     }
 
-    writeToJsonFile(desks, 'al/fake.json');
+    writeToJsonFile(desks, {filePath: 'al/fake.json'});
 
     return desks
 }
