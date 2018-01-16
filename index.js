@@ -1,4 +1,6 @@
 (function() {
+    const $advancedTrigger = $('.advanced-trigger');
+    const $advanced = $('.advanced');
     const $scanNetwork = $('.scan-network');
     const $showOnMap = $('.show-on-map');
     const $shutDownAll = $('.shut-down-all');
@@ -6,6 +8,10 @@
 		const randomizedScannedIpsArray = [];
     const ipsArr = [];
     let ipsStr;
+
+    $advancedTrigger.on('click', function(e){
+      $advanced.toggleClass('hide');  
+    });
 
 		// mounting ids with ips onload
 		$.get({

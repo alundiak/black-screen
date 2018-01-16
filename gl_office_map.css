@@ -1,0 +1,207 @@
+#krk-map {
+    margin-top: -100px;
+}
+
+.host-up {
+    fill: red !important;
+}
+
+.host-down {
+    fill: grey !important;
+}
+
+
+.conf_placeholder {
+  fill: #F5F7F8;
+}
+
+.conf_placeholder_x0020_2 {
+  fill: #F5F7F8;
+}
+
+.conf_placeholder_x0020_3 {
+  fill: #F5F7F8;
+}
+
+.equipment {
+  fill: #FFFFFF;
+}
+
+.reserved {
+  fill: #AEADAD;
+}
+
+.table_placeholder {
+  fill: #E1E1E1;
+}
+
+.st0 {
+  fill: #FFFFFF;
+}
+
+.st1 {
+  fill: #F8FAFA;
+}
+
+.st2 {
+  fill: #F8FAFA;
+  stroke: #F6F7F7;
+  stroke-miterlimit: 10;
+}
+
+.st3 {
+  fill: none;
+}
+
+.st4 {
+  fill: #99999A;
+}
+
+.st5 {
+  fill: none;
+  stroke: #D8D8D8;
+  stroke-miterlimit: 10;
+}
+
+.st6 {
+  fill: #9B9B9B;
+}
+
+.st7 {
+  font-family: 'OpenSans-Semibold';
+}
+
+.st8 {
+  font-size: 10.7996px;
+}
+
+.st9 {
+  letter-spacing: 1;
+}
+
+.st10 {
+  fill: #F6F8F8;
+}
+
+.st11 {
+  font-size: 9.0509px;
+}
+
+.st12 {
+  font-size: 8.286px;
+}
+
+.st13 {
+  fill: #B4B4B4;
+}
+
+.st14 {
+  font-size: 8.6397px;
+}
+
+.st15 {
+  fill: #B3B2B3;
+}
+
+.st16 {
+  font-size: 8.8643px;
+}
+
+.st17 {
+  font-size: 9px;
+}
+
+.st18 {
+  font-size: 12px;
+}
+
+.st19 {
+  font-size: 11.0527px;
+}
+
+.st20 {
+  display: none;
+}
+
+.st21 {
+  display: inline;
+  fill: #3AB556;
+}
+
+.st22 {
+  display: inline;
+  fill: #FFFFFF;
+}
+
+.st23 {
+  display: inline;
+  fill: #EF4523;
+}
+
+.st24 {
+  display: inline;
+  fill: #959595;
+}
+
+.st25 {
+  font-size: 8px;
+}
+
+.st26 {
+  font-size: 11px;
+}
+
+.st27 {
+  fill: #E2E2E2;
+}
+
+.st28 {
+  display: none;
+  fill: #AEAEAE;
+}
+
+.st29 {
+  display: none;
+  fill: #FFFFFF;
+}
+
+.st30 {
+  fill: #989898;
+}
+
+.st31 {
+  font-family: 'OpenSans';
+}
+
+.st32 {
+  font-size: 8.2667px;
+}
+
+.st33 {
+  display: none;
+  fill: #AEADAD;
+}
+
+.st34 {
+  enable-background: new;
+}
+
+.equipment {
+  fill: #FFFFFF;
+}
+
+.reserved {
+  fill: #AEAEAE;
+}
+
+.table_placeholder {
+  fill: #E2E2E2;
+}
+
+.conf_placeholder {
+  fill: #F6F8F8;
+}
+
+.dg.ac {
+  display: none;
+}

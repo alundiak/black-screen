@@ -22,6 +22,7 @@ const vpn = false;
 
 app.set('port', (process.env.PORT || 5000));
 
+// https://expressjs.com/en/starter/static-files.html
 app.use(express.static(__dirname + '/'));
 
 app.use(bodyParser.urlencoded({
@@ -29,9 +30,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-app.get('/', function(request, response) {
-    response.sendFile(path.join(__dirname + '/index.html'));
-});
+// app.get('/', function(request, response) {
+//     response.sendFile(path.join(__dirname + '/index.html'));
+// });
 
 async function convertAndWrite() {
     // this code is executed when server starts, and it takes CSV file and convert to JSON, for further usage during scan.html usage
