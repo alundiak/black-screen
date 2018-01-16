@@ -17,6 +17,7 @@
     "ip": "^1.1.5",
     "ip-address": "^5.8.9",
     "lookup-hostname": "^1.1.0",
+    "materialize-css": "^0.100.2",
     "qs": "^6.5.1",
     "shelljs": "^0.7.8"
   }
