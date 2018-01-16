@@ -21,7 +21,7 @@
       this.width = document.documentElement.offsetWidth;
       this.height = document.documentElement.offsetHeight;
 
-      this.textSize = Math.floor(this.width / 7);
+      this.textSize = Math.floor(this.width / 10);
       // sets text size based on window size
       if (this.textSize > this.height) {
         this.textSize = Math.floor(this.height/1.5); }

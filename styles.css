@@ -1,5 +1,13 @@
 /*TODO: use materialize instead and zero css*/
 
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Orbitron Black'), local('Orbitron-Black'), url(fonts/Orbiton900.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+
 html, body, * {
   padding: 0;
   margin: 0;
@@ -9,22 +17,25 @@ html, body {
   height: 100%;
 }
 
-header {
+
+.black-screen-header {
+  font-family: Orbitron;
   background: #333;
   overflow: hidden;
   width: 100%;
   color: white;
   height: 60px;
-}
-
-header h1.black-screen-header {
-  margin-top: 10px;
+  padding-top: 9px;
+  margin: 0;
   padding-left: 20px;
+  font-size: 35px;
 }
 
 .buttons {
   text-align: center;
-  margin: 20px auto;
+  margin: 13px auto;
+  font-size: 0.9rem;
+  position: relative;
 }
 
 #krk-map {
@@ -34,19 +45,31 @@ header h1.black-screen-header {
 
 .top-container {
   display: inline-block;
-  width: 19%;
+  width: 24%;
+  position:absolute;
+  left: 0;
 }
 
 .text-container {
   width: 100%;
+  height: auto;
+  color: #333!important;
+  text-align: center;
 }
+
 .svg-container {
   display: inline-block;
-  width: 80%;
+  width: 75%;
+  position: absolute;
+  right: 0;
 }
 
 .bs-content .loading-indicator {
   display: none;
+}
+
+.bs-content {
+  position: relative;
 }
 
 .host-up {
@@ -279,4 +302,24 @@ header h1.black-screen-header {
 
 .dg.ac {
   display: none;
+}
+
+.buttons .preloader-wrapper {
+  display: none;
+}
+
+.buttons .loading span {
+  visibility: hidden;
+}
+
+.buttons .loading .preloader-wrapper {
+  display: inline-block;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+
+.buttons button {
+  padding: 0 10px;
 }

@@ -35,6 +35,7 @@
 
 					ipsStr = randomizedScannedIpsArray.join(', ')
 					$('.text-container').text(ipsStr);
+          $('#textarea1').trigger('autoresize');
           $scanNetwork.removeClass('loading');
           $shutDownAll.removeClass('disabled');
 					$showOnMap.removeClass('disabled');
@@ -65,6 +66,7 @@
 					$('.shut-down-all').removeClass('loading');
           $scanNetwork.removeClass('disabled');
           $shutDownAll.addClass('disabled');
+          $('#textarea1').trigger('autoresize');
         }, 2000);
     }
 
