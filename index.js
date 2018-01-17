@@ -17,7 +17,15 @@
 		$.get({
 				url: '/fake',
 				success: xhrData => {
-						fakeJsonArray = xhrData;
+            if (typeof xhrData === 'string'){ // use case of /fake NOT as endpoint but as file from /dist folder
+              try {
+                fakeJsonArray = JSON.parse(xhrData);
+              }catch(e){
+                console.log(e)
+              }
+            } else {
+              fakeJsonArray = xhrData;
+            }
 
 						fakeJsonArray.forEach(pair => {
 							let cssSelector = `#${pair.id_g} path`;

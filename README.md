@@ -43,6 +43,18 @@ Got to browser
 
 - http://localhost:5000/ - main page
 - http://localhost:5000/al/scan.html - Scanner sandbox
+- http://localhost:5000/with_d3/ - D3 variants of design
+
+
+## Distribution
+
+```
+grunt build
+```
+
+And then open `index.html` from `dist` folder.
+TODO: Fix cors (due to HTML import). 
+or (assuming you have nodejs installed): `npm install -g http-server` and run `http-server` from `dist` folder.)
 
 
 ## Presentation

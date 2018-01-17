@@ -61,4 +61,4 @@ typings/
 .env
 
 package-lock.json
-0
+dist

@@ -1,13 +1,13 @@
 {
   "name": "black-screen",
   "version": "1.0.0",
-  "description": "",
+  "description": "Black Screen (GloabalLogic UI/UX Contest task)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "GlobalLogic Poland",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -15,9 +15,14 @@
     "d3": "^4.12.2",
     "dat.gui": "^0.6.5",
     "express": "^4.16.2",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-text-replace": "^0.4.0",
     "ip": "^1.1.5",
     "ip-address": "^5.8.9",
     "jquery-ui": "^1.12.1",
+    "load-grunt-tasks": "^3.5.2",
     "lookup-hostname": "^1.1.0",
     "materialize-css": "^0.100.2",
     "qs": "^6.5.1",
