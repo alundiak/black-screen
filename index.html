@@ -30,30 +30,32 @@
     <div class="bs-content">
         <div class="top-container">
 
-            <p class="advanced-trigger">
-              <input type="checkbox" />
-              <label>Advanced Features</label>
-            </p>
-            <!-- <a href="#!" class="btn" onclick="Materialize.showStaggeredList('#staggered-test')">Click Me</a> -->
-
-            <div class="advanced hide">
-              <div class="row">
-                <div class="input-field col s12">
-                  <input type="text" name="host_to_scan" class="host-to-scan" placeholder="hostname, IP, IPs">
-                </div>
-              </div> 
-              <div class="row">
-                <span>or</span>  
-                <div class="file-field input-field">
-                  <div class="btn">
-                    <span>File</span>
-                    <input type="file">
-                  </div>
-                  <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
-                  </div>
-                </div>
-              </div>
+            <div class="row">
+                <form class="col s12">
+                    <p class="advanced-trigger">
+                      <input type="checkbox" id="adnacedTrigger"/>
+                      <label for="adnacedTrigger">Advanced Features</label>
+                    </p>
+                    <div class="advanced hide">
+                      <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix" title="valid hostname, IP address, or comma separated IP addresses">computer</i>
+                            <input id="hostIconPrefix" type="text" class="validate" name="host_to_scan">
+                            <label for="hostIconPrefix">type what to scan</label>
+                        </div>
+                      </div> 
+                      <span>or</span>
+                      <div class="row">
+                        <div class="file-field input-field col s12">                            
+                            <input type="file">
+                            <div class="file-path-wrapper">
+                                <i class="material-icons prefix" title="ddd">attach_file</i>
+                                <input class="file-path validate" type="text" placeholder="Upload file" title=".json, .txt, .csv">
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </form>
             </div>
 
             <div class="buttons">
@@ -98,8 +100,6 @@
             </div>
 
         </div>
-
-
         
         <div class="svg-container"></div>
     </div>

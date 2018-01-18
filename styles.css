@@ -38,8 +38,9 @@ html, body {
 .top-container {
   display: inline-block;
   width: 24%;
-  position:absolute;
+  position: absolute;
   left: 0;
+  margin-top: 10px;
 }
 
 .text-container {

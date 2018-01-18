@@ -1,5 +1,5 @@
 (function() {
-    const $advancedTrigger = $('.advanced-trigger');
+    const $advancedTrigger = $('#adnacedTrigger');
     const $advanced = $('.advanced');
     const $scanNetwork = $('.scan-network');
     const $showOnMap = $('.show-on-map');
