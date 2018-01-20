@@ -4,7 +4,6 @@
   "description": "Black Screen (GloabalLogic UI/UX Contest task)",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "GlobalLogic Poland",
@@ -20,10 +19,8 @@
     "grunt-text-replace": "^0.4.0",
     "ip": "^1.1.5",
     "ip-address": "^5.8.9",
-    "jquery-ui": "^1.12.1",
     "load-grunt-tasks": "^3.5.2",
     "lookup-hostname": "^1.1.0",
-    "materialize-css": "^0.100.2",
     "qs": "^6.5.1",
     "shelljs": "^0.7.8"
   }

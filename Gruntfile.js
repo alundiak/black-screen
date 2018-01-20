@@ -11,17 +11,6 @@ module.exports = function(grunt) {
             }
         },
 
-        replace: {
-            main: {
-                src: ['dist/index.js'],
-                dest: 'dist/index.js',
-                replacements: [{
-                    from: '\'/fake\'',
-                    to: '\'/fake.json\''
-                }]
-            }
-        },
-
         copy: {
             main: {
                 files: [{
@@ -33,16 +22,18 @@ module.exports = function(grunt) {
                     src: ['fake.json'],
                     dest: 'dist',
                     filter: 'isFile'
-                }, {
-                    src: ['node_modules/jquery/dist/jquery.min.js'],
-                    dest: 'dist/'
-                }, {
-                    src: ['node_modules/dat.gui/build/dat.gui.min.js'],
-                    dest: 'dist/'
-                }, {
-                    src: ['node_modules/materialize-css/dist/**'],
-                    dest: 'dist/'
                 }],
+            }
+        },
+
+        replace: {
+            main: {
+                src: ['dist/index.js'],
+                dest: 'dist/index.js',
+                replacements: [{
+                    from: '\'/fake\'',
+                    to: '\'./fake.json\''
+                }]
             }
         }
     });
