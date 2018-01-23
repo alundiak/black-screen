@@ -4,6 +4,7 @@
 <head>
     <title>Black Screen</title>
     <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -41,8 +42,8 @@
                       <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix" title="valid hostname, IP address, or comma separated IP addresses">computer</i>
-                            <input id="hostIconPrefix" type="text" class="validate" name="host_to_scan">
-                            <label for="hostIconPrefix">type what to scan</label>
+                            <input id="hostToScan" type="text" class="validate" name="host_to_scan">
+                            <label for="hostToScan">type what to scan</label>
                         </div>
                       </div> 
                       <span>or</span>
@@ -60,7 +61,7 @@
             </div>
 
             <div class="buttons">
-                <button class="green accent-3 waves-effect waves-light btn scan-network">
+                <button class="accent-3 waves-effect waves-light btn scan-network">
                     <div class="preloader-wrapper small active">
                         <div class="spinner-layer spinner-red-only">
                             <div class="circle-clipper left">
@@ -75,14 +76,15 @@
                         </div>
                     </div>
                     <span>Scan Network</span>
+                    <i class="material-icons right">send</i>
                 </button>
             </div>
             <div class="input-field">
                 <textarea disabled id="textarea1" class="materialize-textarea text-container"></textarea>
             </div>
             <div class="buttons">
-                <a class="green accent-3 waves-effect waves-light btn show-on-map disabled">Show on Map</a>
-                <a class="green accent-3 waves-effect waves-light btn shut-down-all disabled">
+                <a class="blue accent-3 waves-effect waves-light btn show-on-map disabled">Show on Map</a>
+                <a class="red accent-3 waves-effect waves-light btn shut-down-all disabled">
                     <div class="preloader-wrapper small active">
                         <div class="spinner-layer spinner-red-only">
                             <div class="circle-clipper left">

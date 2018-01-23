@@ -28,6 +28,8 @@
                 $scanNetwork.removeClass('loading');
             }
         });
+
+        // TODO rework/add a POST request /post which receives payload from ["1.2.34.5"] or ["1.2.34.5", "1.2.34.6"] etc.
     });
 
 }());

@@ -154,7 +154,7 @@ module.exports.liveScanWithFile = function(options) {
 
 module.exports.parseNmapReportOutput_CLI = function(options) {
     const shell = require('shelljs')
-    let commandStr = `./al/scan_networks.sh`;
+    let commandStr = `./al/parse_nmap_output.sh`;
 
     return new Promise((resolve, reject) => {
         shell.exec(commandStr, function(code, stdout, stderr) {
@@ -165,7 +165,7 @@ module.exports.parseNmapReportOutput_CLI = function(options) {
 }
 
 module.exports.parseNmapReportOutput = function(nmapData) {
-  // Port the logic here from al/scan_networks.sh
+  // Port the logic here from al/parse_nmap_output.sh
   return nmapData;
 }
 

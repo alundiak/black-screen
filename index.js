@@ -4,14 +4,19 @@
     const $scanNetwork = $('.scan-network');
     const $showOnMap = $('.show-on-map');
     const $shutDownAll = $('.shut-down-all');
-    let fakeJsonArray;
+    const $hostToScan = $('#hostToScan');
 		const randomizedScannedIpsArray = [];
     const ipsArr = [];
+    let fakeJsonArray;
     let ipsStr;
+    var useSingleScan = false;
 
-    $advancedTrigger.on('click', function(e){
-      $advanced.toggleClass('hide');  
-    });
+    const appendIpAddresses = (pair) => {
+      // console.log(pair);
+      let cssSelector = `#${pair.id_g} path`;
+      $(cssSelector).attr('data-ip', `${pair.ip}`);
+      ipsArr.push(pair.ip);
+    }
 
 		// mounting ids with ips onload
 		$.get({
@@ -27,11 +32,7 @@
               fakeJsonArray = xhrData;
             }
 
-						fakeJsonArray.forEach(pair => {
-							let cssSelector = `#${pair.id_g} path`;
-	            $(cssSelector).attr('data-ip', `${pair.ip}`);
-							ipsArr.push(pair.ip);
-						});
+						fakeJsonArray.forEach(appendIpAddresses);
 				}
 		});
 
@@ -56,15 +57,45 @@
         }, 1200);
     }
 
-    $scanNetwork.on('click', randomFakeScan);
+    $scanNetwork.on('click', function() {
+        let fileUpload = false;
+        let ipValue = $hostToScan.val();
+
+        if (ipValue) {
+            useSingleScan = true;
+            $('.scan-network').addClass('loading');
+            $.get({
+                url: '/scan/' + ipValue,
+                success: function(xhrData) {
+                    $('.text-container').text(xhrData.data);
+                    $('#textarea1').trigger('autoresize');
+                    $scanNetwork.removeClass('loading');
+                    $shutDownAll.removeClass('disabled');
+                    $showOnMap.removeClass('disabled');
+                },
+                complete: function() {
+                    $scanNetwork.removeClass('loading');
+                }
+            });
+        } else if (fileUpload) {
+            // TODO
+        } else {
+            randomFakeScan();
+        }
+    });
 
     const showOnMapClickHandler = () => {
         $('.host-up').removeClass('host-up');
-
-				randomizedScannedIpsArray.forEach(ip => {
-					let cssSelector = `[data-ip="${ip}"]`;
-					$(cssSelector).addClass('host-up');
-				});
+        
+        if (useSingleScan){
+          let cssSelector = `[data-ip="172.26.142.16"]`; // GET RID of this hardcode
+          $(cssSelector).addClass('host-up');
+        } else {
+          randomizedScannedIpsArray.forEach(ip => {
+            let cssSelector = `[data-ip="${ip}"]`;
+            $(cssSelector).addClass('host-up');
+          });  
+        } 
     }
 
     $showOnMap.on('click', showOnMapClickHandler);
@@ -85,6 +116,11 @@
     }
 
     $shutDownAll.on('click', shutDownAllClickHandler);
+
+    $advancedTrigger.on('click', function(e){
+      $advanced.toggleClass('hide');  
+      $hostToScan.val('');
+    });
 
     $('.intro').delay(1500).toggle('clip'); // 1,5 sec before intro fadeout
 }());

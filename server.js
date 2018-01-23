@@ -82,6 +82,10 @@ async function variantWithSingleScan(options) {
         scanWithVPN: vpn
     })
 
+    if (options.parseData){
+      dataFromScan = parseNmapReportOutput_CLI(dataFromScan);
+    }
+
     return dataFromScan;
 }
 
@@ -120,7 +124,8 @@ app.get('/scan', async function(request, response) {
 
 app.get('/scan/:customHostname', async function(request, response) {
         let dataFromScan = await variantWithSingleScan({
-            request: request
+            request: request,
+            parseData: true
         });
 
         response.status(200).json({
