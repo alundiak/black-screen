@@ -2,6 +2,8 @@
 module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
+    let glMapHtml = grunt.file.read('./gl_office_map.html');
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
@@ -14,7 +16,7 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [{
-                    src: ['index.*', 'gl_office_map.*', 'styles.css', 'intro.js', 'fonts/**'],
+                    src: ['index.*', 'gl_office_map.*', 'styles.css', 'intro.js', 'fonts/**', 'favicon.png'],
                     dest: 'dist/'
                 }, {
                     expand: true,
@@ -33,6 +35,17 @@ module.exports = function(grunt) {
                 replacements: [{
                     from: '\'/fake\'',
                     to: '\'./fake.json\''
+                }]
+            },
+            indexHtml: {
+              src: ['dist/index.html'],
+                dest: 'dist/index.html',
+                replacements: [{
+                  from: '<link rel="import" href="./gl_office_map.html">',
+                  to: ''
+                }, {
+                  from: '<!-- DO_NOT_REMOVE_THIS -->',
+                  to: glMapHtml
                 }]
             }
         }

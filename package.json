@@ -4,6 +4,8 @@
   "description": "Black Screen (GloabalLogic UI/UX Contest task)",
   "main": "server.js",
   "scripts": {
+    "eslint": "eslint Gruntfile.js",
+    "format": "js-beautify -s 10  Gruntfile.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "GlobalLogic Poland",
@@ -19,9 +21,19 @@
     "grunt-text-replace": "^0.4.0",
     "ip": "^1.1.5",
     "ip-address": "^5.8.9",
-    "load-grunt-tasks": "^3.5.2",
     "lookup-hostname": "^1.1.0",
     "qs": "^6.5.1",
     "shelljs": "^0.7.8"
+  },
+  "devDependencies": {
+    "load-grunt-tasks": "^3.5.2",
+    "js-beautify": "^1.7.5",
+    "eslint": "^4.16.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
   }
 }

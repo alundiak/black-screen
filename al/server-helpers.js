@@ -55,7 +55,8 @@ module.exports.convertCsvToArray = function(options) {
     const csv = require('csvtojson')
 
     return new Promise((resolve, reject) => {
-        let arr = [], resultArr = [];
+        let arr = [],
+            resultArr = [];
 
         let csvOptions = {
             // noheader: true,
@@ -154,19 +155,25 @@ module.exports.liveScanWithFile = function(options) {
 
 module.exports.parseNmapReportOutput_CLI = function(options) {
     const shell = require('shelljs')
+    const whiteSpacesRegExp = /\s/g
     let commandStr = `./al/parse_nmap_output.sh`;
 
     return new Promise((resolve, reject) => {
         shell.exec(commandStr, function(code, stdout, stderr) {
             console.log(stdout);
+            // need to change from "\n" to ", " or change sh script.
+            if (whiteSpacesRegExp.test(stdout.trim())) {
+                stdout = stdout.trim().replace(whiteSpacesRegExp, ', ');
+                // will be shown in textarea. TODO: rework parse_nmap_output.sh to avoid this hack
+            }
             resolve(stdout)
         });
     })
 }
 
 module.exports.parseNmapReportOutput = function(nmapData) {
-  // Port the logic here from al/parse_nmap_output.sh
-  return nmapData;
+    // TODO: Port the logic here from al/parse_nmap_output.sh
+    return nmapData;
 }
 
 module.exports.host2ip = function(hostnamesArray) {
@@ -202,8 +209,8 @@ module.exports.host2ip = function(hostnamesArray) {
 }
 
 module.exports.createFakeJson = function() {
-		// don't like this line
-		const writeToJsonFile = require('./server-helpers').writeToJsonFile;
+    // don't like this line
+    const writeToJsonFile = require('./server-helpers').writeToJsonFile;
     const nDesks = 95;
     const nDesksM = 22;
     const nDesksS = 18;
@@ -233,7 +240,9 @@ module.exports.createFakeJson = function() {
         })
     }
 
-    writeToJsonFile(desks, {filePath: 'al/fake.json'});
+    writeToJsonFile(desks, {
+        filePath: 'al/fake.json'
+    });
 
     return desks
 }

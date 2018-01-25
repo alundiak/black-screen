@@ -34,6 +34,10 @@ app.use(bodyParser.json());
 //     response.sendFile(path.join(__dirname + '/index.html'));
 // });
 
+//
+// TODOD move below async functions into server-helpers.js and simplify above imports.
+//
+
 async function convertAndWrite() {
     // this code is executed when server starts, and it takes CSV file and convert to JSON, for further usage during scan.html usage
     let arr = await convertCsvToArray({
@@ -76,14 +80,14 @@ async function variantWithDedicatedCsv(options) {
 }
 
 // based on custom value for single IP address or hostname from UI
-async function variantWithSingleScan(options) {
-    // TODO valdataFromScaningDate request.params.customHostname as valid hostname
-    let dataFromScan = await liveScan([options.request.params.customHostname], {
+async function variantWithLiveScan(options) {
+    // TODO validateFromScaningData request.params.customHostname as valid hostname
+    let dataFromScan = await liveScan(options.inputScanData, {
         scanWithVPN: vpn
     })
 
-    if (options.parseData){
-      dataFromScan = parseNmapReportOutput_CLI(dataFromScan);
+    if (options.parseOutputData) {
+        dataFromScan = parseNmapReportOutput_CLI(dataFromScan);
     }
 
     return dataFromScan;
@@ -92,46 +96,55 @@ async function variantWithSingleScan(options) {
 // based on custom hardcode file al/gl_networks.txt where listed Network Sub Nets
 async function variantWithSubnetScan(options) {
     let dataFromScan = await liveScanWithFile({
-      filePath: 'al/gl_networks.txt'
+        filePath: 'al/gl_networks.txt'
     })
 
-    if (options.parseData){
-      // dataFromScan = parseNmapReportOutput(dataFromScan);     // TODO
-      dataFromScan = parseNmapReportOutput_CLI(dataFromScan);
+    if (options.parseOutputData) {
+        // dataFromScan = parseNmapReportOutput(dataFromScan);     // TODO
+        dataFromScan = parseNmapReportOutput_CLI(dataFromScan);
     }
 
     return dataFromScan;
 }
 
 app.get('/scan', async function(request, response) {
-        // alternative to '/scan/:customHostname'
-        // var url = require('url');
-        // var url_parts = url.parse(request.url, true);
-        // console.log(url_parts);
-        // var query = url_parts.query;
-        // console.log(query.customHostname);
+    // alternative to '/scan/:customHostname'
+    // var url = require('url');
+    // var url_parts = url.parse(request.url, true);
+    // console.log(url_parts);
+    // var query = url_parts.query;
+    // console.log(query.customHostname);
 
-        // let dataFromScan = await variantWithDedicatedCsv();
-        // let dataFromScan = await variantWithSubnetScan();
-        let dataFromScan = await variantWithSubnetScan({
-          parseData: true
-        });
-
-        response.status(200).json({
-            data: await dataFromScan
-        });
+    // let dataFromScan = await variantWithDedicatedCsv();
+    // let dataFromScan = await variantWithSubnetScan();
+    let dataFromScan = await variantWithSubnetScan({
+        parseOutputData: true
     });
+
+    response.status(200).json({
+        data: await dataFromScan
+    });
+});
 
 app.get('/scan/:customHostname', async function(request, response) {
-        let dataFromScan = await variantWithSingleScan({
-            request: request,
-            parseData: true
-        });
+    let inputScanData = [];
+    let multiple = request.params.customHostname.indexOf(',') > 0;
 
-        response.status(200).json({
-            data: dataFromScan
-        });
+    if (multiple) {
+        inputScanData = request.params.customHostname.split(',');
+    } else {
+        inputScanData = [request.params.customHostname];
+    }
+
+    let dataFromScan = await variantWithLiveScan({
+        inputScanData: inputScanData,
+        parseOutputData: true
     });
+
+    response.status(200).json({
+        data: dataFromScan
+    });
+});
 
 app.get('/fake', function(request, response) {
     let fakeArr = createFakeJson();

@@ -3,6 +3,10 @@
 }
 
 .host-up {
+    fill: green !important;
+}
+
+.host-shutting-down {
     fill: red !important;
 }
 

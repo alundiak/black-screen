@@ -61,7 +61,7 @@
             </div>
 
             <div class="buttons">
-                <button class="accent-3 waves-effect waves-light btn scan-network">
+                <button class="blue accent-3 waves-effect waves-light btn scan-network">
                     <div class="preloader-wrapper small active">
                         <div class="spinner-layer spinner-red-only">
                             <div class="circle-clipper left">
@@ -80,10 +80,10 @@
                 </button>
             </div>
             <div class="input-field">
-                <textarea disabled id="textarea1" class="materialize-textarea text-container"></textarea>
+                <textarea disabled id="textarea1" class="materialize-textarea text-container">No information about hosts</textarea>
             </div>
             <div class="buttons">
-                <a class="blue accent-3 waves-effect waves-light btn show-on-map disabled">Show on Map</a>
+                <a class="green accent-3 waves-effect waves-light btn show-on-map disabled">Show on Map</a>
                 <a class="red accent-3 waves-effect waves-light btn shut-down-all disabled">
                     <div class="preloader-wrapper small active">
                         <div class="spinner-layer spinner-red-only">
@@ -104,17 +104,21 @@
 
         </div>
         
-        <div class="svg-container"></div>
+        <div class="svg-container"><!-- DO_NOT_REMOVE_THIS --></div>
     </div>
 
     <script>
-      var link = document.querySelector('link[rel="import"]');
-      var content = link.import;
+        try{
+            var link = document.querySelector('link[rel="import"]');
+            var content = link.import;
 
-      // Grab DOM from .svg-container .html's document.
-      var el = content.querySelector('#krk-map');
+            // Grab DOM from .svg-container .html's document.
+            var el = content.querySelector('#krk-map');
 
-      document.querySelector('.svg-container').appendChild(el.cloneNode(true));
+            document.querySelector('.svg-container').appendChild(el.cloneNode(true));
+        } catch(e){
+
+        }
     </script>
     <script type="module" src="index.js"></script>
     <script type="text/javascript" src="intro.js"></script>
