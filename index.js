@@ -5,12 +5,12 @@
     const $showOnMap = $('.show-on-map');
     const $shutDownAll = $('.shut-down-all');
     const $hostToScan = $('#hostToScan');
+    const $uploadFile = $('#uploadFile');
     const randomizedScannedIpsArray = [];
     const ipsArr = [];
     const whiteSpacesRegExp = /\s/g
     let fakeJsonArray;
     let liveJsonArray = [];
-    var useLiveScan = false;
     var advancedFeatureEnabled = false;
 
     const appendIpAddresses = (pair) => {
@@ -48,6 +48,10 @@
         }
     });
 
+    $uploadFile.on('click', function(e) {
+        $hostToScan.val('');
+    }); 
+
     $advancedTrigger.on('click', function(e) {
         advancedFeatureEnabled = !advancedFeatureEnabled;
 
@@ -74,6 +78,15 @@
         }, 1200);
     }
 
+    const parseHostsInfo = (inputStr) => {
+      let outputStr = inputStr
+        .replace(whiteSpacesRegExp, '')
+        .replace('..', '.')
+        .replace(',,', ',')
+
+      return outputStr || inputStr;
+    }
+
     const successScanHandler = (xhrData) => {
         if (!xhrData.data) {
             $('.text-container').text("no hosts found");
@@ -95,17 +108,12 @@
     }
 
     $scanNetwork.on('click', function() {
-        let fileUpload = false;
-        let ipValue = $hostToScan.val()
-            .replace(whiteSpacesRegExp, '')
-            .replace('..', '.')
-            .replace(',,', ',');
-
         $('.scan-network').addClass('loading');
         $('.text-container').text('');
 
         if (advancedFeatureEnabled) {
-            useLiveScan = true;
+            let ipValue = parseHostsInfo($hostToScan.val());
+            let isFileAdded = ('files' in $uploadFile[0]) && $uploadFile[0].files.length > 0;
 
             if (ipValue) {
                 $.get({
@@ -113,8 +121,19 @@
                     success: successScanHandler,
                     complete: completeScanHandler
                 });
-            } else if (fileUpload) {
-                // TODO
+            } else if (isFileAdded) {
+                let file = $uploadFile[0].files[0];
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                    let textFromFile = parseHostsInfo(e.target.result);
+                    $.get({
+                        url: '/scan/' + textFromFile, // will scan network with custom, provided info (single or comma-separated)
+                        success: successScanHandler,
+                        complete: completeScanHandler
+                    });
+                };
+
+                file && reader.readAsText(file);
             } else { // just clicked checkbox
                 $.get({
                     url: '/scan', // will scan network and return NMAP parsed output
@@ -132,7 +151,7 @@
     const showOnMapClickHandler = () => {
         $('.host-up').removeClass('host-up');
 
-        let arrayOfIpAddresses = useLiveScan ? liveJsonArray : randomizedScannedIpsArray;
+        let arrayOfIpAddresses = advancedFeatureEnabled ? liveJsonArray : randomizedScannedIpsArray;
 
         arrayOfIpAddresses.forEach(ip => {
             let cssSelector = `[data-ip="${ip}"]`;
