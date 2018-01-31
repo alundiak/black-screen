@@ -21,7 +21,10 @@
     "grunt-text-replace": "^0.4.0",
     "ip": "^1.1.5",
     "ip-address": "^5.8.9",
+    "libnmap": "^0.4.9",
     "lookup-hostname": "^1.1.0",
+    "node-nmap": "^4.0.0",
+    "nodescan": "^0.7.1",
     "qs": "^6.5.1",
     "shelljs": "^0.7.8"
   },

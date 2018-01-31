@@ -31,6 +31,13 @@ GlobalLogic UI/UX Contest task
 - `nmap` commands research/log/examples are in `nmap_commands.txt`
 - After local run, look to `file.log` for runtime results.
 - Note: Reserved Unix/Windows CLI commands: `ps`, `scan`, `uname`, `hostname`, `ping`, `tracert`, `traceroute`, so we better avoid custom file names (like scan.sh)
+- https://github.com/Johnhhorton/node-nmap
+- https://github.com/jas-/node-libnmap
+
+## Nodescan
+- `npm install -g nodescan` => https://github.com/AllGloryToTheHypnotoad/nodescan
+- + `brew install arp-scan`
+- `nodescan -d en0`
 
 ## Run Locally
 
